@@ -1,0 +1,447 @@
+@import "bootstrap.min.css";
+@import "global_vars.css";
+/* Import student CSS files here */
+
+@import "../../student1/css/student1.css";
+@import "../../student2/css/student2.css";
+@import "../../student3/css/student3.css";
+@import "index.css";
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--parchment);
+    color: var(--ink);
+    line-height: 1.6;
+
+    &::selection {
+        color: var(--white);
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-head);
+    color: var(--ink);
+}
+
+/* Offset anchor targets so the sticky navbar does not hide headings */
+section {
+    scroll-margin-top: 80px;
+}
+
+::selection {
+    background-color: var(--crimson);
+}
+
+
+/* =====================================================================
+   PROMO BANNER
+   ===================================================================== */
+
+.promo-alert {
+    background: var(--ink);
+    border: none;
+    border-radius: 0;
+    padding: 8px 0;
+    color: rgba(238, 232, 216, 0.75);
+    font-size: 0.74rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+
+    strong,
+    a {
+        color: var(--fic-acc);
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .btn-close {
+        filter: invert(1);
+        opacity: 0.4;
+    }
+}
+
+
+/* =====================================================================
+   NAVBAR
+   ===================================================================== */
+
+.readify-nav {
+    background: var(--parchment);
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    padding: 0 !important;
+    overflow: visible;
+
+    .container {
+        height: 66px;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--stone) !important;
+        padding: 6px 13px !important;
+        transition: color var(--ease);
+
+        &:hover {
+            color: var(--ink) !important;
+        }
+    }
+
+    .navbar-collapse {
+        background: var(--parchment);
+        border-top: 1px solid var(--rule);
+        padding: 10px 16px 18px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 1040;
+        box-shadow: 0 8px 24px rgba(26, 15, 9, 0.10);
+    }
+
+    @media (max-width: 991.98px) {
+        .navbar-nav .nav-item + .nav-item {
+            margin-top: 4px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .navbar-collapse {
+            position: static;
+            border-top: none;
+            padding: 0;
+            box-shadow: none;
+            background: transparent;
+        }
+    }
+}
+
+.brand-logo {
+    height: 36px;
+    width: auto;
+    display: block;
+}
+
+.nav-cart-btn {
+    background: var(--ink);
+    border: none;
+    border-radius: 5px;
+    color: var(--ivory);
+    font-size: 0.76rem;
+    font-weight: 600;
+    padding: 8px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background var(--ease);
+
+    &:hover {
+        background: var(--crimson);
+    }
+}
+
+.cart-badge {
+    background: var(--crimson);
+    color: #fff;
+    font-size: 0.6rem;
+}
+
+.btn-account {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: var(--stone);
+    background: transparent;
+    border: 1.5px solid var(--rule);
+    border-radius: 5px;
+    padding: 7px 15px;
+    cursor: pointer;
+    transition: all var(--ease);
+
+    &:hover {
+        border-color: var(--crimson);
+        color: var(--crimson);
+    }
+}
+
+.dropdown-menu {
+    background: var(--parchment);
+    border: 1.5px solid var(--rule);
+    border-radius: 10px;
+    padding: 6px;
+
+    .dropdown-item {
+        font-size: 0.84rem;
+        color: var(--chestnut);
+        padding: 8px 14px;
+        border-radius: 6px;
+
+        &:hover {
+            background: var(--crim-lt);
+            color: var(--crimson);
+        }
+
+        .dropdown-icon {
+            color: var(--crimson);
+        }
+    }
+}
+
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+
+.hero-header {
+    background: var(--ink);
+
+    h1 {
+        font-size: clamp(2.4rem, 5vw, 4.2rem);
+        font-weight: 900;
+        color: var(--ivory);
+    }
+}
+
+.italic-accent {
+    font-style: italic;
+    color: var(--fic-acc);
+}
+
+.hero-sub-index {
+    color: rgba(238, 232, 216, 0.55);
+    font-size: 0.94rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.hero-inner {
+    padding: 52px 0 44px;
+
+    @media (min-width: 768px) {
+        padding: 90px 0 80px;
+    }
+}
+
+.breadcrumb-item {
+    &,
+    a {
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 0.83rem;
+        text-decoration: none;
+    }
+
+    &.active {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    & + .breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+
+/* =====================================================================
+   SHARED BUTTONS
+   ===================================================================== */
+
+.btn-prim {
+    background: var(--ink);
+    color: var(--ivory);
+    border: none;
+    font-weight: 600;
+    font-size: 0.77rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    padding: 11px 24px;
+    border-radius: 5px;
+    transition: all var(--ease);
+
+    &:hover {
+        background: var(--crimson);
+        color: #fff;
+    }
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--stone);
+    border: 1.5px solid var(--rule);
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 0.77rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    transition: all var(--ease);
+
+    &:hover {
+        border-color: var(--crimson);
+        color: var(--crimson);
+    }
+}
+
+
+/* =====================================================================
+   NEWSLETTER
+   ===================================================================== */
+
+.newsletter-section {
+    background: var(--newsletter);
+    padding: 52px 0;
+    text-align: center;
+
+    @media (min-width: 768px) {
+        padding: 86px 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--ivory);
+        margin-bottom: 10px;
+
+        @media (min-width: 768px) {
+            font-size: 2.7rem;
+        }
+
+        em {
+            font-style: italic;
+            color: var(--fic-acc);
+        }
+    }
+}
+
+.newsletter-body-text {
+    color: rgba(238, 232, 216, 0.55);
+    font-size: 0.92rem;
+    font-style: italic;
+    margin-bottom: 34px;
+}
+
+.newsletter-fine-print {
+    margin-top: 14px;
+    font-size: 0.7rem;
+    color: rgba(238, 232, 216, 0.28);
+    font-style: italic;
+}
+
+.newsletter-group {
+    max-width: 454px;
+    margin: 0 auto;
+    display: flex;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+
+    .form-control {
+        background: var(--white) !important;
+        border: none !important;
+        color: var(--ink) !important;
+        padding: 14px 17px;
+        font-style: italic;
+        border-radius: 0;
+    }
+
+    .btn {
+        background: var(--crimson);
+        border: none;
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 14px 20px;
+        border-radius: 0;
+
+        &:hover {
+            background: var(--crim-dk);
+        }
+    }
+}
+
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+
+.site-footer {
+    background: var(--ink);
+    padding: 40px 0 24px;
+
+    @media (min-width: 768px) {
+        padding: 60px 0 28px;
+    }
+
+    .footer-col-title {
+        font-size: 0.61rem;
+        font-weight: 700;
+        letter-spacing: 0.26em;
+        text-transform: uppercase;
+        color: rgba(238, 232, 216, 0.8);
+        margin-bottom: 16px;
+    }
+
+    .footer-link {
+        display: block;
+        color: rgba(238, 232, 216, 0.72);
+        text-decoration: none;
+        padding: 4px 0;
+        font-size: 0.83rem;
+        font-style: italic;
+        transition: color var(--ease);
+
+        &:hover {
+            color: var(--fic-acc);
+        }
+    }
+
+    .footer-link-inline {
+        display: inline;
+        padding: 0;
+    }
+
+    .footer-divider {
+        border-color: rgba(255, 255, 255, 0.06);
+        margin: 38px 0 20px;
+    }
+
+    .footer-bottom {
+        font-size: 0.76rem;
+        color: rgba(238, 232, 216, 0.5);
+        font-style: italic;
+    }
+
+    .footer-tagline {
+        font-size: 0.83rem;
+        color: rgba(238, 232, 216, 0.42);
+        font-style: italic;
+        line-height: 1.7;
+    }
+
+    p a {
+        color: #8E8278;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .social-icon {
+        color: rgba(238, 232, 216, 0.6);
+        font-size: 1.05rem;
+        text-decoration: none;
+        transition: color var(--ease);
+
+        &:hover {
+            color: var(--fic-acc);
+        }
+    }
+}

@@ -1,0 +1,55 @@
+/*
+ * =====================================================================
+ *
+ * READIFY COLOR PALETTE
+ * -------------
+ * --crimson    #B5332A  — logo accent
+ * --crim-dk    #AF312C  — crimson hover
+ * --crim-lt    #FBF0EF  — blush background
+ * --crim-mid   #E5B9B5  — blush border
+ * --ink        #1A0F09  — near-black
+ * --chestnut   #3C2010  — secondary dark
+ * --parchment  #F8F5EF  — page background
+ * --ivory      #EEE8D8  — slightly darker parchment
+ * --stone      #8E8278  — muted labels
+ * --rule       #D9D1C4  — borders and dividers
+ * --white      #FFFFFF  — card and modal surfaces
+ * --newsletter #4A2218  — newsletter band
+ * --fic-bg     #110B06  — fiction section background
+ * --fic-acc    #CFA05A  — warm ochre accent
+ * =====================================================================
+ */
+
+
+/* =====================================================================
+   CUSTOM PROPERTIES
+   ===================================================================== */
+
+:root {
+    --crimson: #B5332A;
+    --crim-dk: #AF312C;
+    --crim-lt: #FBF0EF;
+    --crim-mid: #E5B9B5;
+    --ink: #1A0F09;
+    --chestnut: #3C2010;
+    --parchment: #F8F5EF;
+    --ivory: #EEE8D8;
+    --stone: #8E8278;
+    --rule: #D9D1C4;
+    --white: #FFFFFF;
+    --newsletter: #4A2218;
+    --fic-bg: #110B06;
+    --fic-acc: #CFA05A;
+
+    --font-head: 'Fraunces', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --ease: 0.2s ease;
+    --radius: 7px;
+
+    /* Bootstrap overrides - brand crimson replaces default blue */
+    --bs-primary: #B5332A;
+    --bs-primary-rgb: 181, 51, 42;
+    --bs-link-color: #B5332A;
+    --bs-link-hover-color: #AF312C;
+    --bs-focus-ring-color: rgba(181, 51, 42, 0.25);
+}

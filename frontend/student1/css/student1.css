@@ -1,0 +1,655 @@
+/* =====================================================================
+   HERO: some overwrites to enable background slide
+   ===================================================================== */
+
+.hero-header-aq {
+    background-color: transparent;
+    min-height: 40vh;
+    overflow: hidden;
+
+    .hero-bg-img {
+        min-height: 40vh;
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+    }
+
+    h1 {
+        font-size: clamp(2.4rem, 5vw, 4.2rem);
+        font-weight: 900;
+        color: var(--ivory);
+    }
+
+
+    .hero-inner-aq {
+        padding: 0;
+        z-index: 10;
+        width: 100%;
+    }
+
+}
+
+.hero-bg-1 {
+    background-image: url("../image/1.jpg.jpeg");
+}
+
+.hero-bg-2 {
+    background-image: url("../image/2.jpg.jpeg");
+}
+
+.hero-bg-3 {
+    background-image: url("../image/3.jpg.jpeg");
+}
+
+.readify-link {
+    color: var(--crimson);
+}
+
+.readify-muted {
+    color: var(--stone);
+}
+
+
+/* =====================================================================
+   SECTION BANNERS  (Nonfiction / Fiction)
+   ===================================================================== */
+
+.section-banner {
+    border-radius: 11px;
+    padding: 22px 20px;
+    margin: 36px 0 0;
+    border-left: 4px solid transparent;
+
+    @media (min-width: 768px) {
+        padding: 30px 40px;
+        margin: 54px 0 0;
+    }
+}
+
+
+.banner-nonfiction {
+    background: var(--ink);
+    border-left-color: var(--crimson);
+
+
+    .banner-label, .banner-icon {
+        color: var(--crimson);
+    }
+
+}
+
+.banner-fiction {
+    background: var(--fic-bg);
+    border-left-color: var(--fic-acc);
+
+    .banner-label, .banner-icon {
+        color: var(--fic-acc);
+    }
+}
+
+.banner-icon {
+    font-size: 3rem;
+}
+
+.section-banner h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--ivory);
+    margin: 0;
+
+    @media (min-width: 768px) {
+        font-size: 2.3rem;
+    }
+}
+
+
+.banner-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+}
+
+
+.banner-sub {
+    font-size: 0.85rem;
+    font-style: italic;
+    margin: 5px 0 0;
+    color: rgba(238, 232, 216, 0.44);
+}
+
+
+/* =====================================================================
+   BOOK CARDS
+   ===================================================================== */
+
+/* Sub-section heading with a bottom border for each genre*/
+.sub-heading {
+    h4 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        font-style: italic;
+        color: var(--chestnut);
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        flex: 1;
+        height: 2px;
+        background: var(--rule);
+        border-radius: 1px;
+    }
+
+}
+
+
+/* Horizontally scrolling carousel row */
+
+.books-row {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    /* Fixed-width column — all cards stay the same size */
+
+    .book-col {
+        flex: 0 0 172px;
+    }
+}
+
+
+/* Prev / next arrow buttons */
+.carousel-ctrl {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--stone);
+
+    &:hover {
+        color: var(--crimson);
+    }
+}
+
+/* Book card */
+.book-card {
+    border-radius: var(--radius);
+    background: var(--white);
+    overflow: hidden;
+    cursor: pointer;
+
+    /* Cover image */
+
+    .book-cover-wrap {
+        background: var(--ivory);
+
+        img {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+
+            @media (min-width: 768px) {
+                height: 220px;
+            }
+        }
+
+
+        .badge-overlay {
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            font-size: 0.61rem;
+            font-weight: 700;
+            border-radius: 3px;
+            letter-spacing: 0.07em;
+            opacity: 0;
+            transition: opacity var(--ease);
+        }
+    }
+
+    &:hover {
+        .badge-overlay,
+        .wishlist-btn {
+            opacity: 1;
+        }
+    }
+
+}
+
+/* end of book.card  */
+
+
+/* Wishlist button — visible on card hover */
+.book-card .wishlist-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(248, 245, 239, 0.92);
+    border: 1px solid var(--rule);
+    width: 30px;
+    height: 30px;
+    font-size: 0.82rem;
+    color: var(--stone);
+    transition: all var(--ease);
+    opacity: 0;
+
+    &:hover {
+        background: var(--crimson);
+        color: var(--white);
+        border-color: var(--crimson);
+    }
+
+}
+
+
+/* Card text area */
+.book-card .card-body {
+    background: transparent !important;
+
+    .book-title {
+        font-family: var(--font-head);
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: var(--ink);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .book-author {
+        font-size: 0.72rem;
+        text-decoration: underline;
+        text-overflow: ellipsis;
+    }
+}
+
+.nonfiction-area .book-author {
+    color: var(--crimson);
+}
+
+.fiction-area .book-author {
+    color: var(--chestnut);
+}
+
+/* =====================================================================
+   BOOK DETAIL MODAL
+   ===================================================================== */
+
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--parchment);
+}
+
+.modal-header {
+    background: var(--white);
+    border-bottom: 1.5px solid var(--rule);
+    padding: 20px 26px;
+}
+
+.modal-title {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--ink);
+}
+
+.modal-body {
+    padding: 26px;
+}
+
+#bookModal {
+    .modal-book-cover {
+        width: 150px;
+        height: 220px;
+        border-radius: 6px;
+        object-fit: cover;
+        box-shadow: 6px 8px 24px var(--rule);
+    }
+
+    #modal-author {
+        color: var(--crimson);
+        font-style: italic;
+    }
+
+    .bi-star-fill,
+    .bi-star-half {
+        color: var(--fic-acc);
+    }
+
+    .modal-price {
+        font-family: var(--font-head);
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--ink);
+    }
+
+    .premium-alert {
+        background: var(--ivory);
+        border: 1.5px solid var(--rule);
+        border-left: 4px solid var(--crimson);
+        color: var(--chestnut);
+    }
+}
+
+/* Small uppercase label ("Choose Format", "Reader Ratings" etc.) */
+.modal-section-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--stone);
+}
+
+/* Accordion */
+.modal-accordion {
+    .accordion-button {
+        font-family: var(--font-head);
+        font-weight: 700;
+        font-size: 0.98rem;
+        color: var(--ink);
+
+        &::after {
+            content: "+";
+            background: none !important;
+            color: var(--crimson);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 700;
+            transform: none !important;
+        }
+
+        &:not(.collapsed) {
+            color: var(--crimson);
+            background: var(--crim-lt);
+            box-shadow: none;
+
+            &::after {
+                content: "x";
+            }
+        }
+    }
+
+    .accordion-body {
+        background: var(--white);
+        font-size: 0.87rem;
+        line-height: 1.78;
+        color: var(--chestnut);
+    }
+}
+
+/* Form inputs */
+.form-control,
+.form-select {
+    background: var(--white) !important;
+    border: 1.5px solid var(--rule) !important;
+    color: var(--ink) !important;
+    font-size: 0.86rem;
+    border-radius: 6px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--crimson) !important;
+    box-shadow: 0 0 0 3px rgba(181, 51, 42, 0.1) !important;
+}
+
+.form-floating label {
+    font-size: 0.84rem;
+    color: var(--stone);
+    font-style: italic;
+}
+
+/* Modal footer */
+.modal-footer-custom {
+    background: var(--white);
+    border-top: 1.5px solid var(--rule);
+}
+
+
+/* =====================================================================
+   HELP PAGE STYLES
+   ===================================================================== */
+
+/* Help page: sell form textarea */
+.help-sell-textarea {
+    height: 110px !important;
+}
+
+/* Help page: sell form condition buttons */
+.help-condition-opts {
+    label {
+        min-width: 94px;
+        border: 1.5px solid var(--rule);
+        background: var(--white);
+        color: var(--chestnut);
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+
+    label:hover {
+        border-color: var(--crimson);
+        color: var(--crimson);
+    }
+
+    .btn-check:checked + label {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: var(--ivory);
+    }
+}
+
+/* Help page: sticky tab bar below the navbar */
+.help-tabs {
+    background: var(--parchment);
+    border-bottom: 1.5px solid var(--rule);
+    top: 66px;
+    z-index: 900;
+
+    .nav-link {
+        color: var(--stone);
+        font-size: 0.82rem;
+        padding: 12px 16px;
+        border-bottom: 3px solid transparent;
+        transition: color var(--ease), border-color var(--ease), background var(--ease);
+
+        &:hover {
+            color: var(--crimson);
+            background: var(--crim-lt);
+        }
+
+        &.active {
+            color: var(--crimson);
+            background: transparent;
+            border-bottom-color: var(--crimson);
+            font-weight: 700;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .nav-link {
+            font-size: 0.86rem;
+            padding: 15px 20px;
+        }
+    }
+}
+
+/* Help page: section headings */
+.help-section-header {
+    border-left: 4px solid var(--crimson);
+
+    h2 {
+        font-size: 1.45rem;
+        font-weight: 900;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+    }
+
+    p {
+        color: var(--stone);
+        font-size: 0.9rem;
+    }
+
+    @media (min-width: 768px) {
+        h2 {
+            font-size: 1.85rem;
+        }
+    }
+}
+
+
+/* Help page: user listed books */
+.listed-book-card {
+    background: var(--white);
+    border: 1.5px solid var(--rule) !important;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 22px rgba(26, 15, 9, 0.05);
+    overflow: hidden;
+
+    .listed-book-cover {
+        min-height: 170px;
+        object-fit: cover;
+    }
+
+    .listed-status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 13px;
+        border-radius: 50px;
+        font-size: 0.74rem;
+        font-weight: 600;
+        background: var(--crim-lt);
+        color: var(--crimson);
+        border: 1px solid var(--crim-mid);
+        white-space: nowrap;
+    }
+
+    .card-body {
+        min-height: 170px;
+
+        .book-title {
+            font-family: var(--font-head);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ink);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .book-author {
+            color: var(--ink);
+            font-size: 0.78rem;
+        }
+    }
+
+    .modal-price {
+        font-family: var(--font-head);
+        font-size: 1.12rem;
+        font-weight: 700;
+        color: var(--ink);
+    }
+}
+
+
+/* Help page: contact strip */
+.help-contact-strip {
+    background: var(--ivory);
+    border-top: 1.5px solid var(--rule);
+    border-bottom: 1.5px solid var(--rule);
+    padding: 44px 0;
+
+    @media (min-width: 768px) {
+        padding: 72px 0;
+    }
+}
+
+.help-contact-eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.26em;
+    color: var(--crimson);
+}
+
+.help-contact-heading {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+
+    @media (min-width: 768px) {
+        font-size: 2.1rem;
+    }
+}
+
+.help-contact-sub {
+    font-size: 0.9rem;
+    color: var(--stone);
+}
+
+/* Help page: contact method cards */
+.help-contact-card {
+    background: var(--white);
+    border: 1.5px solid var(--rule);
+    border-radius: 14px;
+    transition: border-color var(--ease), box-shadow var(--ease), transform var(--ease);
+
+    &:hover {
+        border-color: var(--crimson);
+        box-shadow: 0 8px 28px rgba(181, 51, 42, 0.10);
+        transform: translateY(-3px);
+    }
+
+    i {
+        color: var(--crimson);
+    }
+
+    .help-ct-title {
+        font-family: var(--font-head);
+        font-size: 0.96rem;
+        font-weight: 700;
+        color: var(--ink);
+    }
+
+    .help-ct-sub {
+        font-size: 0.8rem;
+        color: var(--stone);
+    }
+}
+
+/* Help page: listing form messages */
+/* =====================================================================
+   READIFY CUSTOM ALERTS
+   ===================================================================== */
+
+/* Replaces alert-success */
+.readify-alert-success {
+    background-color: #F5F7ED;
+    border: 1.5px solid #A9B96F;
+    color: #3F541F !important;
+    border-radius: 6px;
+    font-size: 0.86rem;
+    font-weight: 500;
+}
+
+/* Replaces alert-danger */
+.readify-alert-error {
+    background-color: var(--crim-lt); /* Very soft red/pink */
+    border: 1.5px solid var(--crim-mid); /* Medium crimson border */
+    color: black; /* Dark crimson text */
+    border-radius: 6px;
+    font-size: 0.86rem;
+    font-weight: 500;
+}
+
+
+/*Loader for catalog */
+
+.readify-loader {
+    color: var(--crimson);
+}
+

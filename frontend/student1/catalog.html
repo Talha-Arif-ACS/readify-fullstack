@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Browse Catalog</title>
+    <meta content="Hamid" name="author"/>
+    <link href="../common/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="../common/css/main.css" rel="stylesheet">
+    <!-- Bootstrap Icons 1.11.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <!-- Google Fonts: Fraunces (headings) + Plus Jakarta Sans (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav aria-label="Main navigation" class="navbar navbar-expand-lg readify-nav">
+    <div class="container d-flex align-items-center">
+
+        <a href="../index.html"><img alt="logo" class="brand-logo" src="../common/images/logo.svg"></a>
+
+        <!-- Mobile toggle -->
+        <button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler border-0 ms-auto"
+                data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
+            <i class="bi bi-list fs-4 text-secondary"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../student2/ebooks.html">eBooks</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../student2/audiobooks.html">Audio Books</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../student3/reading-clubs.html">Reading Clubs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="help.html">Help</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <i class="bi bi-geo-alt me-1"></i>Stores
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="../student3/shops.html#brussels"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Brussels</a></li>
+                        <li><a class="dropdown-item" href="../student3/shops.html#antwerpen"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Antwerpen</a></li>
+                        <li><a class="dropdown-item" href="../student3/shops.html#gent"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Gent</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="../index.html"><i class="bi bi-globe me-2"></i>Online
+                            Store</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <button aria-label="Open cart" class="nav-cart-btn">
+                        <i class="bi bi-bag"></i>
+                        <span>Cart</span>
+                        <span class="badge rounded-pill cart-badge">0</span>
+                    </button>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <button aria-expanded="false" class="btn-account" data-bs-toggle="dropdown">
+                        <i class="bi bi-person me-1"></i>Account
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" id="accountDropdownMenu">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-box-arrow-in-right dropdown-icon me-2"></i>Login</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#signUpModal">
+                            <i class="bi bi-person-plus dropdown-icon me-2"></i>Sign Up</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">
+                            <i class="bi bi-heart dropdown-icon me-2"></i>Wishlist</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<header class="hero-header-aq position-relative">
+
+    <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="heroCarousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="hero-bg-img hero-bg-1"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-bg-img hero-bg-2"></div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-bg-img hero-bg-3"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" hero-inner-aq text-center position-absolute top-50 start-50 translate-middle">
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active">Browse Catalog</li>
+            </ol>
+        </nav>
+
+        <h1>Books for <span class="italic-accent">every curious mind.</span></h1>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main class="container py-5">
+    <div class="row gx-5">
+
+        <!-- Main content -->
+        <div class="col-12">
+
+            <!-- ════════════════ NONFICTION SECTION ════════════════ -->
+            <section class="nonfiction-area" id="nonfiction">
+
+                <!-- Section banner -->
+                <div class="section-banner banner-nonfiction d-flex align-items-center gap-3">
+                    <div class="banner-text">
+                        <div class="banner-label">Section One</div>
+                        <h2>Nonfiction</h2>
+                        <p class="banner-sub mb-0">True stories, big ideas &amp; real world insights</p>
+                    </div>
+                    <!-- Icon — ms-auto pushes it to the far right -->
+                    <div class="banner-icon ms-auto">
+                        <i class="bi bi-journal-text"></i>
+                    </div>
+                </div>
+
+                <!--Sub Sections will be injected-->
+                <div id="nonfiction-content">
+                    <!-- Pre-loader. Then will be replaced by all the books. -->
+                    <div class="readify-loader d-flex justify-content-center flex-column align-items-center my-5 gap-3">
+
+                        <div class="spinner-border" role="status">
+                        </div>
+                        <div>
+                            <span class="loader-label">Loading books…</span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- ════════════════ FICTION SECTION ════════════════ -->
+            <section class="fiction-area" id="fiction">
+
+                <!-- Section banner -->
+                <div class="section-banner banner-fiction d-flex align-items-center gap-3">
+                    <div class="banner-text">
+                        <div class="banner-label">Section Two</div>
+                        <h2>Fiction</h2>
+                        <p class="banner-sub mb-0">Stories that transport, challenge &amp; endure</p>
+                    </div>
+                    <!-- Icon — ms-auto pushes it to the far right -->
+                    <div class="banner-icon ms-auto">
+                        <i class="bi bi-book"></i>
+                    </div>
+                </div>
+
+                <!--Sub Sections will be injected-->
+
+
+                <div id="fiction-content">
+                    <!-- Pre-loader. Then will be replaced by all the books. -->
+                    <div class="readify-loader d-flex justify-content-center flex-column align-items-center my-5 gap-3">
+
+                        <div class="spinner-border" role="status">
+                        </div>
+                        <div>
+                            <span class="loader-label">Loading books…</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</main>
+
+
+<!-- ============================================================
+     NEWSLETTER
+============================================================ -->
+<section class="newsletter-section">
+    <div class="container newsletter-inner">
+        <h2>Never miss a<br><em>great read.</em></h2>
+        <p class="newsletter-body-text">
+            Weekly staff picks, exclusive deals &amp; author spotlights to your inbox.
+        </p>
+        <div class="newsletter-group">
+            <input class="form-control" id="nlEmail" placeholder="your@email.com" type="email"/>
+            <button class="btn" type="button" id="nl-btn">
+                <i class="bi bi-send me-1"></i>Subscribe
+            </button>
+        </div>
+        <p class="newsletter-fine-print">No spam. Unsubscribe anytime.</p>
+
+        <div class="col-4 mx-auto">
+            <div class="alert d-none" role="alert" id="nl-message"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Brand column -->
+            <div class="col-12 col-lg-4">
+                <a href="../index.html"><img alt="logo alternate" src="../common/images/logo_alt.svg" width="125"></a>
+
+                <p class="footer-tagline mt-3">
+                    This is a fictional website created for our Full Stack Essentials course at
+                    <a href="https://www.thomasmore.be/">&copy; Thomas More University of Applied Sciences.</a>
+                </p>
+                <div class="d-flex gap-3 mt-3">
+                    <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/readify30/"><i class="bi bi-instagram"></i></a>
+                    <a aria-label="X" class="social-icon" href="https://x.com/readify30"><i class="bi bi-twitter-x"></i></a>
+                    <a aria-label="Facebook" class="social-icon" href="https://www.facebook.com/share/1B4VCF98HM/?mibextid=wwXIfr"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Shop</p>
+                <a class="footer-link" href="catalog.html">Browse Catalog</a>
+                <a class="footer-link" href="../student2/audiobooks.html">Audio Books</a>
+                <a class="footer-link" href="../student2/ebooks.html">E-Books</a>
+                <a class="footer-link" href="../student3/shops.html">Physical Shops</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Clubs</p>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Fantasy</a>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Mystery</a>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Sci-Fi</a>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Non-Fiction</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Help</p>
+                <a class="footer-link" href="help.html">Support</a>
+                <a class="footer-link" href="help.html#faq">FAQ</a>
+                <a class="footer-link" href="help.html#sell">Sell a Book</a>
+                <a class="footer-link" href="help.html#contact">Contact Us</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Genres</p>
+                <a class="footer-link" href="catalog.html#fiction">Fiction</a>
+                <a class="footer-link" href="catalog.html#nonfiction">Nonfiction</a>
+                <a class="footer-link" href="catalog.html">Children's</a>
+                <a class="footer-link" href="catalog.html">Young Adult</a>
+            </div>
+
+        </div><!-- /.row -->
+
+        <hr class="footer-divider"/>
+        <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom gap-2">
+            <p class="mb-0">&copy; 2026 Readify, Inc. Page designed by
+                <a href="https://www.linkedin.com/in/hamidhussaini-pro/" target="_blank">Hamid Hussaini.</a> Content & Some Images is AI Generated!
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- ============================================================
+     BOOK DETAIL MODAL -
+============================================================ -->
+<div class="modal fade" id="bookModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Loading...</h5>
+                <button class="btn-close" data-bs-dismiss="modal" type="button" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-4 mb-4">
+                    <div class="col-sm-auto text-center">
+                        <img class="modal-book-cover" id="modal-cover" src="../common/images/logo.svg" alt="Book cover">
+                    </div>
+
+                    <div class="col">
+                        <p class="fs-5 fw-semibold mb-2" id="modal-author">Loading...</p>
+
+                        <div class="d-flex align-items-center gap-2 small text-muted mb-3">
+                            <span>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </span>
+                            <span id="modal-rating">Loading...</span>
+                        </div>
+
+                        <div class="alert premium-alert d-flex align-items-center gap-2 py-2 px-3 small mb-3">
+                            <i class="bi bi-award-fill"></i>
+                            <span><strong>Premium Members</strong> get 10% off + loyalty stamps.</span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2 small text-muted mb-3">
+                            <i class="bi bi-book"></i>
+                            <span>Physical copy</span>
+                            <span class="vr"></span>
+                            <span id="modal-stock">Available in catalog</span>
+                        </div>
+
+                        <p class="modal-price mb-3" id="modal-price">$0.00</p>
+
+                        <div class="d-flex gap-2 flex-wrap">
+                            <button class="btn btn-prim" type="button">
+                                <i class="bi bi-bag-plus me-2"></i>Add to Cart
+                            </button>
+                            <button class="btn btn-ghost" type="button">
+                                <i class="bi bi-heart me-1"></i>Wishlist
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion modal-accordion" id="bookAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" data-bs-toggle="collapse"
+                                    data-bs-target="#accInfo" type="button" aria-expanded="true"
+                                    aria-controls="accInfo">
+                                <i class="bi bi-book me-2"></i>About This Book
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse show" id="accInfo" data-bs-parent="#bookAccordion">
+                            <div class="accordion-body">
+                                <p class="mb-0" id="modal-description">Loading description...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                    data-bs-target="#accReview" type="button" aria-expanded="false"
+                                    aria-controls="accReview">
+                                <i class="bi bi-pencil me-2"></i>Write a Review
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse" id="accReview" data-bs-parent="#bookAccordion">
+                            <div class="accordion-body">
+                                <form class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input class="form-control" id="rName" placeholder="Name" type="text">
+                                            <label for="rName">Your Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input class="form-control" id="rEmail" placeholder="Email" type="email">
+                                            <label for="rEmail">Email Address</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <textarea class="form-control" id="rBody" rows="4"
+                                                  placeholder="Share a few thoughts about this book..."></textarea>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <select class="form-select" id="recSelect">
+                                            <option value="">Would you recommend this book?</option>
+                                            <option>Absolutely yes</option>
+                                            <option>Yes, with conditions</option>
+                                            <option>Not sure</option>
+                                            <option>Probably not</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button class="btn btn-prim" type="button">
+                                            <i class="bi bi-send me-2"></i>Submit Review
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer modal-footer-custom">
+                <button class="btn btn-ghost" data-bs-dismiss="modal" type="button">Close</button>
+                <button class="btn btn-prim" type="button">
+                    <i class="bi bi-bag-plus me-2"></i>Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+    Sign up  MODAL
+============================================================ -->
+
+<div aria-hidden="true" class="modal fade" id="signUpModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-person-plus me-2"></i>Create Your Account
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpFirstName" placeholder="First Name" type="text"/>
+                            <label for="signUpFirstName">First Name *</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpLastName" placeholder="Last Name" type="text"/>
+                            <label for="signUpLastName">Last Name *</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpEmail" placeholder="Email" type="email"/>
+                            <label for="signUpEmail">Email Address *</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpPassword" placeholder="Password" type="password"/>
+                            <label for="signUpPassword">Password *</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert d-none" role="alert" id="signUpMessage"></div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-prim w-100 py-2" type="button" id="signUpBtn">
+                            <i class="bi bi-person-plus me-2"></i>Create Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal-footer modal-footer-custom justify-content-center">
+                <small class="text-muted">Already have an account?
+                    <a class="readify-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"
+                       data-bs-dismiss="modal">Log in</a>
+                </small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================================
+    Login MODAL
+============================================================ -->
+
+<div aria-hidden="true" class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-box-arrow-in-right me-2"></i>Welcome Back
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="loginEmail" placeholder="Email" type="email"/>
+                            <label for="loginEmail">Email Address</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="loginPassword" placeholder="Password" type="password"/>
+                            <label for="loginPassword">Password</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert d-none" role="alert" id="loginMessage"></div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-prim w-100 py-2" type="button" id="loginBtn">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Log In
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer modal-footer-custom justify-content-center">
+                <small class="text-muted">Don't have an account?
+                    <a class="readify-link" href="#" data-bs-toggle="modal" data-bs-target="#signUpModal"
+                       data-bs-dismiss="modal">Sign up</a>
+                </small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS bundle (includes modal, offcanvas, collapse, dropdown, accordion) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/student1.js"></script>
+
+</body>
+</html>

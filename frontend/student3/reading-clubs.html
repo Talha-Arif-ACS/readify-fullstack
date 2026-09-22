@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Reading Clubs - Readify</title>
+    <meta content="Talha Arif" name="author"/>
+    <link href="../common/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"/>
+
+    <!-- Load order:
+        1. main.css — shared designs: navbar, hero, buttons, newsletter, footer
+        2. student3.css — only styles unique to the reading-clubs page (breadcrumb, club cards, join form) -->
+    <link href="../common/css/main.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ============================================================
+     1. PROMO BANNER
+     ============================================================
+     .promo-alert, .btn-close  →  main.css
+============================================================ -->
+<div class="alert promo-alert alert-dismissible fade show mb-0" role="alert">
+    <div class="container text-center">
+        <i class="bi bi-bookmark me-2"></i>
+        Use code <strong>READ10</strong> for 10% off your first order &mdash;
+        <a class="ms-1" href="#">Claim the offer</a>
+    </div>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
+</div>
+
+
+<!-- ============================================================
+     2. NAVBAR
+     ============================================================-->
+<nav aria-label="Main navigation" class="navbar navbar-expand-lg readify-nav">
+    <div class="container d-flex align-items-center">
+
+        <!-- Logo — links back to homepage -->
+        <a href="index.html">
+            <img alt="Readify logo" class="brand-logo" src="../common/images/logo.svg"/>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler border-0 ms-auto"
+                data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
+            <i class="bi bi-list fs-4 text-secondary"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student1/catalog.html">Browse Catalog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student2/ebooks.html">eBooks</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student2/audiobooks.html">Audio Books</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student1/help.html">Help</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <i class="bi bi-geo-alt me-1"></i>Shops
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="student3/shops.html#brussels"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Brussels</a></li>
+                        <li><a class="dropdown-item" href="student3/shops.html#antwerpen"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Antwerpen</a></li>
+                        <li><a class="dropdown-item" href="student3/shops.html#gent"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Gent</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <button aria-label="Open cart" class="nav-cart-btn">
+                        <i class="bi bi-bag"></i>
+                        <span>Cart</span>
+                        <span class="badge rounded-pill cart-badge">0</span>
+                    </button>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <button aria-expanded="false" class="btn-account" data-bs-toggle="dropdown">
+                        <i class="bi bi-person me-1"></i>Account
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i
+                                class="bi bi-box-arrow-in-right dropdown-icon me-2"></i>Login</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus dropdown-icon me-2"></i>Sign
+                            Up</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-heart dropdown-icon me-2"></i>Wishlist</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ============================================================
+     3. HERO
+     ============================================================
+     .hero-header  .hero-inner  .hero-sub  .italic-accent
+         →  antiquarian4.css (dark ink bg, ruled-line texture,
+            crimson glow, staggered entrance animation)
+     .breadcrumb  →  Bootstrap (colors fixed in student3.css)
+============================================================ -->
+<header class="hero-header mb-0">
+    <div class="hero-inner container text-center">
+
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb justify-content-center align-items-center mb-0">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active">Reading Clubs</li>
+            </ol>
+        </nav>
+
+        <h1 class="mb-3">Reading Clubs<span class="italic-accent"> for every reader.</span></h1>
+
+        <p class="hero-sub mb-0 mx-auto">
+            Join fellow book lovers and explore stories together in our weekly reading clubs.
+        </p>
+
+    </div>
+</header>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main class="container py-5">
+
+
+    <!-- ===========================================================
+         SECTION 1 — CLUBS BY GENRE
+         ===========================================================
+         Clubs are loaded dynamically from the API via student3.js.
+         GET 1: loadAllClubs() fetches all clubs on page load.
+         GET 2: filterClubs() fetches clubs filtered by genre.
+    =========================================================== -->
+    <section class="mb-5 pb-4" id="clubs">
+
+        <div class="mb-4">
+            <div class="clubs-section-header">
+                <h2>Reading Clubs by Genre</h2>
+                <p>Weekly gatherings for curious minds — find your genre and join the conversation.</p>
+            </div>
+        </div>
+
+        <!-- Filter bar -->
+        <div class="d-flex gap-2 mb-4">
+            <input type="text" id="genre-filter" class="form-control" placeholder="Filter by genre (e.g. Fantasy)">
+            <button id="filter-btn" class="btn btn-prim">Filter</button>
+            <button id="reset-btn" class="btn btn-outline-secondary">Reset</button>
+        </div>
+
+        <!-- Clubs load here dynamically -->
+        <div class="row g-4" id="clubs-container"></div>
+
+    </section>
+
+
+    <!-- ===========================================================
+         SECTION 2 — FAQ
+         ===========================================================
+         .modal-accordion  →  antiquarian4.css
+         Same class used in Antiquarian book modal and Help page FAQ.
+    =========================================================== -->
+    <section class="mb-5 pb-4" id="faq">
+
+        <div class="mb-4">
+            <div class="clubs-section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know before joining a club.</p>
+            </div>
+        </div>
+
+        <div class="accordion modal-accordion" id="faqAccordion">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            data-bs-target="#faq1" data-bs-toggle="collapse" type="button">
+                        <i class="bi bi-question-circle me-2"></i>How do I join a reading club?
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq1">
+                    <div class="accordion-body">
+                        You can sign up using the form below or visit one of our Readify stores in person. A member of
+                        our team will confirm your spot within 24 hours and send you the details for your first meeting.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            data-bs-target="#faq2" data-bs-toggle="collapse" type="button">
+                        <i class="bi bi-book me-2"></i>Do I need to buy the book before attending?
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq2">
+                    <div class="accordion-body">
+                        Not necessarily — but having a copy of the current book helps you follow and enjoy the
+                        discussion. You can purchase the current title at a discount from any Readify store when
+                        you mention your club membership.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            data-bs-target="#faq3" data-bs-toggle="collapse" type="button">
+                        <i class="bi bi-people me-2"></i>Can I join multiple clubs?
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq3">
+                    <div class="accordion-body">
+                        Absolutely. You are welcome to join as many clubs as you like. Each club meets on a different
+                        day of the week, so it is easy to attend several without any scheduling conflicts.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed"
+                            data-bs-target="#faq4" data-bs-toggle="collapse" type="button">
+                        <i class="bi bi-laptop me-2"></i>Are the meetings online or in-store?
+                    </button>
+                </h2>
+                <div class="accordion-collapse collapse" data-bs-parent="#faqAccordion" id="faq4">
+                    <div class="accordion-body">
+                        Most meetings are held in-store to keep that warm, bookshop atmosphere. Online sessions
+                        may be arranged on request — please mention your preference in the sign-up form below.
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /#faqAccordion -->
+    </section>
+
+
+    <!-- ===========================================================
+         SECTION 3 — PROPOSE A CLUB FORM
+         ===========================================================
+         POST: proposeClub() sends form data to the API.
+         Fields match the reading_clubs table exactly.
+    =========================================================== -->
+    <section class="mb-2" id="join">
+
+        <div class="mb-4">
+            <div class="clubs-section-header">
+                <h2>Propose a New Reading Club</h2>
+                <p>Have an idea for a club? Submit it and we'll get in touch.</p>
+            </div>
+        </div>
+
+        <div class="join-form-card">
+            <p class="modal-section-label mb-4">Club Details</p>
+            <div class="row g-3" id="propose-form">
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input class="form-control" id="clubName" placeholder="Club Name" required type="text"/>
+                        <label for="clubName">Club Name *</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input class="form-control" id="clubGenre" placeholder="Genre" required type="text"/>
+                        <label for="clubGenre">Genre *</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input class="form-control" id="clubDay" placeholder="Meeting Day" required type="text"/>
+                        <label for="clubDay">Meeting Day *</label>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <div class="form-floating">
+                        <input class="form-control" id="clubTime" placeholder="Meeting Time" required type="text"/>
+                        <label for="clubTime">Meeting Time (e.g. 18:00) *</label>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-floating">
+                        <input class="form-control" id="clubPlace" placeholder="Meeting Place" required type="text"/>
+                        <label for="clubPlace">Meeting Place *</label>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-floating">
+                        <textarea class="form-control clubs-join-textarea" id="clubDescription"
+                                  placeholder="Description"></textarea>
+                        <label for="clubDescription">Description (optional)</label>
+                    </div>
+                </div>
+
+                <div class="col-12 pt-1">
+                    <button class="btn btn-prim" id="propose-submit" type="button">
+                        <i class="bi bi-plus-circle me-2"></i>Propose Club
+                    </button>
+                </div>
+
+                <div class="col-12" id="propose-feedback"></div>
+
+            </div>
+        </div><!-- /.join-form-card -->
+    </section>
+
+
+</main><!-- /main.container -->
+
+
+<!-- ============================================================
+     NEWSLETTER
+     ============================================================
+     .newsletter-section  .newsletter-inner  .newsletter-body-text
+     .newsletter-group    .newsletter-fine-print
+         →  all in antiquarian4.css
+============================================================ -->
+<section class="newsletter-section">
+    <div class="container newsletter-inner">
+        <h2>Never miss a<br><em>great read.</em></h2>
+        <p class="newsletter-body-text">
+            Weekly staff picks, exclusive deals &amp; author spotlights to your inbox.
+        </p>
+        <div class="newsletter-group">
+            <input class="form-control" id="nlEmail" placeholder="your@email.com" type="email"/>
+            <button class="btn" type="button">
+                <i class="bi bi-send me-1"></i>Subscribe
+            </button>
+        </div>
+        <p class="newsletter-fine-print">No spam. Unsubscribe anytime.</p>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================
+     .site-footer  .footer-col-title  .footer-link  .footer-link-inline
+     .footer-tagline  .footer-divider  .footer-bottom  .social-icon
+         →  all in antiquarian4.css
+============================================================ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Brand column -->
+            <div class="col-12 col-lg-4">
+                <img alt="logo alternate" src="../common/images/logo_alt.svg" width="125px">
+
+                <p class="footer-tagline mt-3">
+                    This is a fictional website created for our Full Stack Essentials course at
+                    <a href="https://www.thomasmore.be/">&copy; Thomas More University of Applied Sciences.</a>
+                </p>
+                <div class="d-flex gap-3 mt-3">
+                    <a aria-label="Instagram" class="social-icon" href="#"><i class="bi bi-instagram"></i></a>
+                    <a aria-label="X" class="social-icon" href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a aria-label="Facebook" class="social-icon" href="#"><i class="bi bi-facebook"></i></a>
+                    <a aria-label="TikTok" class="social-icon" href="#"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Shop</p>
+                <a class="footer-link" href="../student1/catalog.html">Browse Catalog</a>
+                <a class="footer-link" href="../student2/ebooks.html">Audio Books</a>
+                <a class="footer-link" href="../student2/ebooks.html">E-Books</a>
+                <a class="footer-link" href="shops.html">Physical Shops</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Clubs</p>
+                <a class="footer-link" href="#clubs">Fantasy</a>
+                <a class="footer-link" href="#clubs">Mystery</a>
+                <a class="footer-link" href="#clubs">Sci-Fi</a>
+                <a class="footer-link" href="#clubs">Non-Fiction</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Help</p>
+                <a class="footer-link" href="../student1/help.html">Support</a>
+                <a class="footer-link" href="../student1/help.html#faq">FAQ</a>
+                <a class="footer-link" href="../student1/help.html#sell">Sell a Book</a>
+                <a class="footer-link" href="../student1/help.html#contact">Contact Us</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Genres</p>
+                <a class="footer-link" href="../student1/catalog.html#fiction">Fiction</a>
+                <a class="footer-link" href="../student1/catalog.html#nonfiction">Nonfiction</a>
+                <a class="footer-link" href="../student1/catalog.html">Children's</a>
+                <a class="footer-link" href="../student1/catalog.html">Young Adult</a>
+            </div>
+
+        </div><!-- /.row -->
+
+        <hr class="footer-divider"/>
+        <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom gap-2">
+            <p class="mb-0">&copy; 2026 Readify, Inc. Page designed by
+                <a href="https://www.linkedin.com/in/talhaarifmalik/" target="_blank">Talha Arif</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS bundle (modal, offcanvas, collapse, dropdown, accordion) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/student3.js"></script>
+</body>
+</html>

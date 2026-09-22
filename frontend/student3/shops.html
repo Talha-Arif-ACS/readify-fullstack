@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Our Stores - Readify</title>
+    <meta content="Talha Arif" name="author"/>
+    <link href="../common/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"/>
+
+    <!-- Load order:
+        1. main.css — shared designs: navbar, hero, buttons, newsletter, footer
+        2. student3.css — only styles unique to the shops page (breadcrumb, city tabs, map, store info card) -->
+    <link href="../common/css/main.css" rel="stylesheet"/>
+    <link href="css/student3.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ============================================================
+     1. PROMO BANNER
+     ============================================================
+     .promo-alert, .btn-close  →  main.css
+============================================================ -->
+<div class="alert promo-alert alert-dismissible fade show mb-0" role="alert">
+    <div class="container text-center">
+        <i class="bi bi-bookmark me-2"></i>
+        Use code <strong>READ10</strong> for 10% off your first order &mdash;
+        <a class="ms-1" href="#">Claim the offer</a>
+    </div>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
+</div>
+
+
+<!-- ============================================================
+     2. NAVBAR
+     ============================================================-->
+<nav aria-label="Main navigation" class="navbar navbar-expand-lg readify-nav">
+    <div class="container d-flex align-items-center">
+
+        <!-- Logo — links back to homepage -->
+        <a href="index.html">
+            <img alt="Readify logo" class="brand-logo" src="common/images/logo.svg"/>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler border-0 ms-auto"
+                data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
+            <i class="bi bi-list fs-4 text-secondary"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student1/catalog.html">Browse Catalog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student2/ebooks.html">eBooks</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student2/audiobooks.html">Audio Books</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student3/reading-clubs.html">Reading Clubs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student1/help.html">Help</a>
+                </li>
+
+                <li class="nav-item">
+                    <button aria-label="Open cart" class="nav-cart-btn">
+                        <i class="bi bi-bag"></i>
+                        <span>Cart</span>
+                        <span class="badge rounded-pill cart-badge">0</span>
+                    </button>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <button aria-expanded="false" class="btn-account" data-bs-toggle="dropdown">
+                        <i class="bi bi-person me-1"></i>Account
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i
+                                class="bi bi-box-arrow-in-right dropdown-icon me-2"></i>Login</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus dropdown-icon me-2"></i>Sign
+                            Up</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-heart dropdown-icon me-2"></i>Wishlist</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ============================================================
+     3. HERO
+     ============================================================
+     .hero-header  .hero-inner  .hero-sub  .italic-accent
+         →  main.css
+     .breadcrumb  →  Bootstrap (colours fixed in shopsStyle.css)
+============================================================ -->
+<header class="hero-header mb-0">
+    <div class="hero-inner container text-center">
+
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active">Our Stores</li>
+            </ol>
+        </nav>
+
+        <h1 class="mb-3">Our Physical <span class="italic-accent">Bookstores.</span></h1>
+
+        <p class="hero-sub mb-0 mx-auto">
+            Visit Readify in one of our welcoming store locations across Belgium.
+        </p>
+
+    </div>
+</header>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main class="container py-5">
+
+
+    <!-- ===========================================================
+         HOLIDAY NOTICE
+         ===========================================================
+         .premium-alert  .premium-alert-text  →  main.css
+         Reuses the same blush-tint notice style from the book modal.
+    =========================================================== -->
+    <div class="alert premium-alert d-flex align-items-center gap-2 alert-dismissible fade show mb-5" role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+        <div class="premium-alert-text">
+            <strong>Holiday Notice:</strong> All stores close at 16:00 on December 24.
+        </div>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
+    </div>
+
+
+    <!-- ===========================================================
+         STORE FINDER — CITY TABS + MAP + INFO
+         ===========================================================
+         .shops-tabs  →  shopsStyle.css
+         .map-frame   →  shopsStyle.css
+         .store-info-card  .store-info-row  →  shops.css
+    =========================================================== -->
+    <section id="stores">
+
+        <!-- Section heading — same left-border pattern as Help / Clubs -->
+        <div class="mb-4">
+            <div class="clubs-section-header">
+                <h2>Find Our Stores</h2>
+                <p>Three locations across Belgium — each one stocked and staffed by book lovers.</p>
+            </div>
+        </div>
+
+        <!-- City tab bar -->
+        <div class="shops-tabs mb-0">
+            <ul class="nav justify-content-center" id="storeTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button aria-controls="brussels" aria-selected="true" class="nav-link active"
+                            data-bs-target="#brussels" data-bs-toggle="tab" id="tab-brussels"
+                            role="tab" type="button">
+                        <i class="bi bi-geo-alt me-1"></i>Brussels
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button aria-controls="antwerpen" aria-selected="false" class="nav-link"
+                            data-bs-target="#antwerpen" data-bs-toggle="tab" id="tab-antwerpen"
+                            role="tab" type="button">
+                        <i class="bi bi-geo-alt me-1"></i>Antwerpen
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button aria-controls="gent" aria-selected="false" class="nav-link"
+                            data-bs-target="#gent" data-bs-toggle="tab" id="tab-gent"
+                            role="tab" type="button">
+                        <i class="bi bi-geo-alt me-1"></i>Gent
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tab-content pt-4" id="storeTabContent">
+
+            <!-- BRUSSELS -->
+            <div aria-labelledby="tab-brussels" class="tab-pane fade show active"
+                 id="brussels" role="tabpanel">
+                <div class="row g-4 align-items-start">
+                    <div class="col-12 col-lg-8">
+                        <iframe allowfullscreen
+                                class="map-frame"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                src="https://maps.google.com/maps?q=Rue%20Neuve%20100%2C%201000%20Brussels&z=15&output=embed" title="Brussels store map"></iframe>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="store-info-card">
+                            <p class="modal-section-label mb-3">Brussels</p>
+                            <h4 class="store-info-title">Readify Brussels</h4>
+                            <div class="store-info-row">
+                                <i class="bi bi-geo-alt-fill store-icon-location"></i>
+                                <span>Rue Neuve 100, 1000 Brussels</span>
+                            </div>
+                            <div class="store-info-row">
+                                <i class="bi bi-clock store-icon-hours"></i>
+                                <span>Mon – Sat &nbsp;09:00 – 19:00</span>
+                            </div>
+                            <div class="store-info-row">
+                                <i class="bi bi-telephone store-icon-phone"></i>
+                                <span>+32 2 123 45 67</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ANTWERPEN -->
+            <div aria-labelledby="tab-antwerpen" class="tab-pane fade"
+                 id="antwerpen" role="tabpanel">
+                <div class="row g-4 align-items-start">
+                    <div class="col-12 col-lg-8">
+                        <iframe allowfullscreen
+                                class="map-frame"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                src="https://maps.google.com/maps?q=Meir%2050%2C%202000%20Antwerpen&z=15&output=embed" title="Antwerpen store map"></iframe>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="store-info-card">
+                            <p class="modal-section-label mb-3">Antwerpen</p>
+                            <h4 class="store-info-title">Readify Antwerpen</h4>
+                            <div class="store-info-row">
+                                <i class="bi bi-geo-alt-fill store-icon-location"></i>
+                                <span>Meir 50, 2000 Antwerpen</span>
+                            </div>
+                            <div class="store-info-row">
+                                <i class="bi bi-clock store-icon-hours"></i>
+                                <span>Mon – Sat &nbsp;10:00 – 18:00</span>
+                            </div>
+                            <div class="store-info-row">
+                                <i class="bi bi-telephone store-icon-phone"></i>
+                                <span>+32 3 123 45 67</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GHENT -->
+            <div aria-labelledby="tab-gent" class="tab-pane fade"
+                 id="gent" role="tabpanel">
+                <div class="row g-4 align-items-start">
+                    <div class="col-12 col-lg-8">
+                        <iframe allowfullscreen
+                                class="map-frame"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                src="https://maps.google.com/maps?q=Korenmarkt%2010%2C%209000%20Gent&z=15&output=embed" title="Ghent store map"></iframe>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="store-info-card">
+                            <p class="modal-section-label mb-3">Gent</p>
+                            <h4 class="store-info-title">Readify Gent</h4>
+                            <div class="store-info-row">
+                                <i class="bi bi-geo-alt-fill store-icon-location"></i>
+                                <span>Korenmarkt 10, 9000 Gent</span>
+                            </div>
+                            <div class="store-info-row">
+                                <i class="bi bi-clock store-icon-hours"></i>
+                                <span>Mon – Sat &nbsp;10:00 – 20:00</span>
+                            </div>
+                            <div class="store-info-row">
+                                <i class="bi bi-telephone store-icon-phone"></i>
+                                <span>+32 9 123 45 67</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.tab-content -->
+    </section>
+
+
+</main><!-- /main.container -->
+
+
+<!-- ============================================================
+     NEWSLETTER
+     ============================================================
+     .newsletter-section  .newsletter-inner  .newsletter-body-text
+     .newsletter-group    .newsletter-fine-print
+         →  all in main.css
+============================================================ -->
+<section class="newsletter-section">
+    <div class="container newsletter-inner">
+        <h2>Never miss a<br><em>great read.</em></h2>
+        <p class="newsletter-body-text">
+            Weekly staff picks, exclusive deals &amp; author spotlights to your inbox.
+        </p>
+        <div class="newsletter-group">
+            <input class="form-control" id="nlEmail" placeholder="your@email.com" type="email"/>
+            <button class="btn" type="button">
+                <i class="bi bi-send me-1"></i>Subscribe
+            </button>
+        </div>
+        <p class="newsletter-fine-print">No spam. Unsubscribe anytime.</p>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================
+     .site-footer  .footer-col-title  .footer-link  .footer-link-inline
+     .footer-tagline  .footer-divider  .footer-bottom  .social-icon
+         →  all in antiquarian4.css
+============================================================ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Brand column -->
+            <div class="col-12 col-lg-4">
+                <img alt="logo alternate" src="../common/images/logo_alt.svg" width="125px">
+
+                <p class="footer-tagline mt-3">
+                    This is a fictional website created for our Full Stack Essentials course at
+                    <a href="https://www.thomasmore.be/">&copy; Thomas More University of Applied Sciences.</a>
+                </p>
+                <div class="d-flex gap-3 mt-3">
+                    <a aria-label="Instagram" class="social-icon" href="#"><i class="bi bi-instagram"></i></a>
+                    <a aria-label="X" class="social-icon" href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a aria-label="Facebook" class="social-icon" href="#"><i class="bi bi-facebook"></i></a>
+                    <a aria-label="TikTok" class="social-icon" href="#"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Shop</p>
+                <a class="footer-link" href="../student1/catalog.html">Browse Catalog</a>
+                <a class="footer-link" href="../student2/ebooks.html">Audio Books</a>
+                <a class="footer-link" href="../student2/ebooks.html">E-Books</a>
+                <a class="footer-link" href="shops.html">Physical Shops</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Clubs</p>
+                <a class="footer-link" href="reading-clubs.html#clubs">Fantasy</a>
+                <a class="footer-link" href="reading-clubs.html#clubs">Mystery</a>
+                <a class="footer-link" href="reading-clubs.html#clubs">Sci-Fi</a>
+                <a class="footer-link" href="reading-clubs.html#clubs">Non-Fiction</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Help</p>
+                <a class="footer-link" href="../student1/help.html">Support</a>
+                <a class="footer-link" href="../student1/help.html#faq">FAQ</a>
+                <a class="footer-link" href="../student1/help.html#sell">Sell a Book</a>
+                <a class="footer-link" href="../student1/help.html#contact">Contact Us</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Genres</p>
+                <a class="footer-link" href="../student1/catalog.html#fiction">Fiction</a>
+                <a class="footer-link" href="../student1/catalog.html#nonfiction">Nonfiction</a>
+                <a class="footer-link" href="../student1/catalog.html">Children's</a>
+                <a class="footer-link" href="../student1/catalog.html">Young Adult</a>
+            </div>
+
+        </div><!-- /.row -->
+
+        <hr class="footer-divider"/>
+        <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom gap-2">
+            <p class="mb-0">&copy; 2026 Readify, Inc. Page designed by
+                <a href="https://www.linkedin.com/in/talhaarifmalik/" target="_blank">Talha Arif</a>
+            </p>
+            <div class="d-flex gap-3">
+                <a class="footer-link footer-link-inline" href="#">Privacy</a>
+                <a class="footer-link footer-link-inline" href="#">Terms</a>
+                <a class="footer-link footer-link-inline" href="#">Accessibility</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Bootstrap JS bundle (tabs, collapse, dropdown, offcanvas) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to switch tab based on URL hash
+        function activateTabFromHash() {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetTab = document.querySelector(`button[data-bs-target="${hash}"]`);
+                if (targetTab) {
+                    const tabTrigger = new bootstrap.Tab(targetTab);
+                    tabTrigger.show();
+
+                    // Optional: Smooth scroll to the stores section
+                    document.getElementById('stores').scrollIntoView({behavior: 'smooth'});
+                }
+            }
+        }
+
+        // Run on initial load
+        activateTabFromHash();
+
+        // Run when the hash changes (if user clicks a nav link while already on the page)
+        window.addEventListener('hashchange', activateTabFromHash);
+    });
+</script>
+</body>
+</html>

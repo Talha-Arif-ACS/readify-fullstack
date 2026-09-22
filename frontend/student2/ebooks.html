@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>E-Books — Readify</title>
+    <meta content="Browse Readify's premium digital e-book collection. Preview chapters, read on any device, and get instant delivery on classic and modern titles."
+          name="description"/>
+    <meta content="Shahadat" name="author"/>
+    <link href="../common/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+    <!--
+        Part 1 Fix: removed duplicate Bootstrap CSS CDN link — Bootstrap is already
+        loaded via @import in common/css/main.css, so the CDN link was redundant.
+        Bootstrap Icons and Google Fonts are NOT in main.css, so they stay here.
+    -->
+
+    <!-- Bootstrap Icons 1.11.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <!-- Google Fonts: Fraunces + Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"/>
+
+    <!--
+        Part 1 Fix: removed duplicate student2.css link — it is already
+        @imported inside common/css/main.css, so a second link was redundant.
+    -->
+    <link href="../common/css/main.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<!-- ============================================================
+     1. PROMO BANNER
+     ============================================================
+     .promo-alert  .btn-close  →  main
+============================================================ -->
+<div class="alert promo-alert alert-dismissible fade show mb-0" role="alert">
+    <div class="container text-center">
+        <i class="bi bi-bookmark me-2"></i>
+        Use code <strong>READ10</strong> for 10% off your first order &mdash;
+        <a class="ms-1" href="#">Claim the offer</a>
+    </div>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
+</div>
+
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav aria-label="Main navigation" class="navbar navbar-expand-lg readify-nav">
+    <div class="container d-flex align-items-center">
+
+        <!-- Logo — links back to homepage -->
+        <a href="../index.html">
+            <img alt="Readify logo" class="brand-logo" src="../common/images/logo.svg"/>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler border-0 ms-auto"
+                data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
+            <i class="bi bi-list fs-4 text-secondary"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../student1/catalog.html">Browse Catalog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="audiobooks.html">Audiobook</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../student3/reading-clubs.html">Reading Clubs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../student1/help.html">Help</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <i class="bi bi-geo-alt me-1"></i>Shops
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="../student3/shops.html#brussels"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Brussels</a></li>
+                        <li><a class="dropdown-item" href="../student3/shops.html#antwerpen"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Antwerpen</a></li>
+                        <li><a class="dropdown-item" href="../student3/shops.html#gent"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Gent</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <button aria-label="Open cart" class="nav-cart-btn">
+                        <i class="bi bi-bag"></i>
+                        <span>Cart</span>
+                        <span class="badge rounded-pill cart-badge">0</span>
+                    </button>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ============================================================
+     3. HERO
+     ============================================================
+     .hero-header  .hero-inner  .hero-sub  .italic-accent  →  main
+     .ebook-icon-badge  →  css
+     .breadcrumb colours  →  css
+============================================================ -->
+<header class="hero-header mb-0">
+    <div class="hero-inner container text-center">
+
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active">E-Books</li>
+            </ol>
+        </nav>
+
+        <div class="ebook-icon-badge">
+            <i class="bi bi-tablet"></i>
+        </div>
+
+        <h1 class="mb-3">
+            Your Entire <span class="italic-accent">Library</span> in One Hand.
+        </h1>
+
+        <p class="hero-sub mb-0">
+            From timeless classics to modern masterpieces — our premium e-book collection,
+            optimised for every screen.
+        </p>
+
+    </div>
+</header>
+
+
+<!-- ============================================================
+     CONTENT 3: LIVE STATS STRIP  (numbers fetched from GET 1)
+     .stats-strip  .stat-item  →  css
+============================================================ -->
+<section aria-label="Collection statistics" class="stats-strip">
+    <div class="container d-flex justify-content-center flex-wrap gap-4">
+        <span class="stat-item">
+            <i class="bi bi-book"></i>
+            <strong id="ebookCount">—</strong> titles available
+        </span>
+        <span class="stat-item">
+            <i class="bi bi-currency-euro"></i>
+            Avg. price: <strong id="ebookAvgPrice">—</strong>
+        </span>
+        <span class="stat-item">
+            <i class="bi bi-truck"></i>
+            Free delivery on all e-books
+        </span>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     CONTENT 2: WHY READ DIGITALLY?  (static info strip)
+     .info-strip  .info-strip-item  →  css
+============================================================ -->
+<section class="info-strip" id="whyDigital">
+    <div class="container">
+        <div class="row text-center g-4">
+
+            <div class="col-md-4">
+                <div class="info-strip-item">
+                    <i class="bi bi-phone"></i>
+                    <h5>Read on Any Device</h5>
+                    <p>Tablet, phone, laptop — your bookshelf travels with you, always in your pocket.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-strip-item">
+                    <i class="bi bi-lightning-charge"></i>
+                    <h5>Instant Delivery</h5>
+                    <p>Purchase and start reading in seconds. No waiting, no shipping delays whatsoever.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-strip-item">
+                    <i class="bi bi-tree"></i>
+                    <h5>Eco-Friendly</h5>
+                    <p>No paper, no shipping — a greener, more sustainable way to enjoy great literature.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main class="container py-5">
+
+
+    <!-- ===========================================================
+         CONTENT 1: GENRE FILTER BAR
+         .genre-filter-bar  .genre-pill  →  css
+         JS wires up click handlers in initGenreFilter()
+    =========================================================== -->
+    <section aria-label="Filter books by genre" class="genre-filter-bar mb-4" id="genreFilter">
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+            <button class="genre-pill active" data-genre="all" id="pill-all">All</button>
+            <button class="genre-pill" data-genre="classic" id="pill-classic">Classic</button>
+            <button class="genre-pill" data-genre="fiction" id="pill-fiction">Fiction</button>
+            <button class="genre-pill" data-genre="philosophy" id="pill-philosophy">Philosophy</button>
+            <button class="genre-pill" data-genre="mystery" id="pill-mystery">Mystery</button>
+            <button class="genre-pill" data-genre="romance" id="pill-romance">Romance</button>
+            <button class="genre-pill" data-genre="horror" id="pill-horror">Horror</button>
+            <span class="ms-auto text-muted" id="filterCount" style="font-size:0.85rem;">Loading…</span>
+        </div>
+    </section>
+
+
+    <!-- ===========================================================
+         DIGITAL COLLECTION — BOOK CAROUSEL
+         ===========================================================
+         .ebook-section-header  →  css
+         .ebook-carousel-wrap   →  css  (arrow padding)
+         .book-card  .book-img  .book-btn-group  →  css
+         .btn.btn-prim  (Buy)     →  main
+         .btn.btn-ghost (Preview) →  main
+
+         GET 1: JS fetches /student2/books?format=ebook on load
+         and builds the carousel slides with the same Bootstrap
+         markup that was previously hardcoded. The carousel
+         component itself (data-bs-ride, arrows, .carousel-inner)
+         is preserved exactly as it was in Part 1.
+    =========================================================== -->
+    <section class="mb-2" id="collection">
+
+        <div class="mb-4">
+            <div class="ebook-section-header">
+                <h2>Our Digital Collection</h2>
+                <!-- Subtitle updated dynamically by JS after GET 1 -->
+                <p id="collectionSubtitle">Loading collection…</p>
+            </div>
+        </div>
+
+        <div class="ebook-carousel-wrap">
+            <div class="carousel slide" data-bs-ride="false" id="bookCarousel">
+
+                <div class="carousel-inner" id="carouselInner">
+                    <!-- Loading state — replaced by JS after GET 1 completes -->
+                    <div class="carousel-item active" id="carouselLoader">
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-secondary" role="status">
+                                <span class="visually-hidden">Loading…</span>
+                            </div>
+                            <p class="text-muted mt-2 small">Fetching your digital library…</p>
+                        </div>
+                    </div>
+                </div><!-- /.carousel-inner -->
+                <button aria-label="Previous slide" class="carousel-control-prev"
+                        data-bs-slide="prev" data-bs-target="#bookCarousel" type="button">
+                    <span aria-hidden="true" class="carousel-control-prev-icon"></span>
+                </button>
+                <button aria-label="Next slide" class="carousel-control-next"
+                        data-bs-slide="next" data-bs-target="#bookCarousel" type="button">
+                    <span aria-hidden="true" class="carousel-control-next-icon"></span>
+                </button>
+
+            </div><!-- /#bookCarousel -->
+        </div><!-- /.ebook-carousel-wrap -->
+
+    </section>
+
+
+</main><!-- /main.container -->
+
+
+<!-- ============================================================
+     CONTENT 4: EDITOR'S PICK SPOTLIGHT  (static feature panel)
+     .editor-pick  →  css
+============================================================ -->
+<section aria-label="Editor's pick" class="editor-pick" id="editorPick">
+    <div class="container">
+        <div class="row align-items-center g-4">
+
+            <div class="col-md-3 text-center">
+                <img alt="The Picture of Dorian Gray — Editor's Pick"
+                     class="img-fluid rounded shadow"
+                     src="image/book1.jpeg"
+                     style="max-height:220px;"/>
+            </div>
+
+            <div class="col-md-9">
+                <span class="badge mb-3"
+                      style="background:var(--fic-acc);color:var(--ink);font-size:0.8rem;padding:5px 14px;">
+                    <i class="bi bi-bookmark-star me-1"></i>Editor's Pick
+                </span>
+                <h3>The Picture of Dorian Gray</h3>
+                <p class="fst-italic">
+                    "A masterclass in prose — Wilde's razor-sharp wit peels back the gilded surface of
+                    Victorian society to reveal the rot beneath. Every sentence demands to be read twice."
+                </p>
+                <p style="color:rgba(238,232,216,0.55);font-size:0.85rem;margin:0;">
+                    — Readify Editorial Team
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!--&lt;!&ndash; ============================================================-->
+<!--     NEWSLETTER-->
+<!--     ============================================================-->
+<!--     .newsletter-section  .newsletter-inner  .newsletter-body-text-->
+<!--     .newsletter-group    .newsletter-fine-print  →  main-->
+<!--============================================================ &ndash;&gt;-->
+<!--<section class="newsletter-section">-->
+<!--    <div class="container newsletter-inner">-->
+<!--        <h2>Never miss a<br><em>great read.</em></h2>-->
+<!--        <p class="newsletter-body-text">-->
+<!--            Weekly staff picks, exclusive deals &amp; author spotlights to your inbox.-->
+<!--        </p>-->
+<!--        <div class="newsletter-group">-->
+<!--            <input class="form-control" id="nlEmail" placeholder="your@email.com" type="email"/>-->
+<!--            <button class="btn" type="button">-->
+<!--                <i class="bi bi-send me-1"></i>Subscribe-->
+<!--            </button>-->
+<!--        </div>-->
+<!--        <p class="newsletter-fine-print">No spam. Unsubscribe anytime.</p>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!-- ============================================================
+     FOOTER
+     ============================================================
+     .site-footer  .footer-col-title  .footer-link  .footer-link-inline
+     .footer-tagline  .footer-divider  .footer-bottom  .social-icon
+         →  all in antiquarian4.css
+============================================================ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Brand column -->
+            <div class="col-12 col-lg-4">
+                <img alt="logo alternate" src="../common/images/logo_alt.svg" width="125px">
+
+                <p class="footer-tagline mt-3">
+                    This is a fictional website created for our Full Stack Essentials course at
+                    <a href="https://www.thomasmore.be/">&copy; Thomas More University of Applied Sciences.</a>
+                </p>
+                <div class="d-flex gap-3 mt-3">
+                    <a aria-label="Instagram" class="social-icon" href="#"><i class="bi bi-instagram"></i></a>
+                    <a aria-label="X" class="social-icon" href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a aria-label="Facebook" class="social-icon" href="#"><i class="bi bi-facebook"></i></a>
+                    <a aria-label="TikTok" class="social-icon" href="#"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Shop</p>
+                <a class="footer-link" href="../student1/catalog.html">Browse Catalog</a>
+                <a class="footer-link" href="audiobooks.html">Audio Books</a>
+                <a class="footer-link" href="ebooks.html">E-Books</a>
+                <a class="footer-link" href="../student3/shops.html">Physical Shops</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Clubs</p>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Fantasy</a>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Mystery</a>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Sci-Fi</a>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Non-Fiction</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Help</p>
+                <a class="footer-link" href="../student1/help.html">Support</a>
+                <a class="footer-link" href="../student1/help.html#faq">FAQ</a>
+                <a class="footer-link" href="../student1/help.html#sell">Sell a Book</a>
+                <a class="footer-link" href="../student1/help.html#contact">Contact Us</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Genres</p>
+                <a class="footer-link" href="../student1/catalog.html#fiction">Fiction</a>
+                <a class="footer-link" href="../student1/catalog.html#nonfiction">Nonfiction</a>
+                <a class="footer-link" href="../student1/catalog.html">Children's</a>
+                <a class="footer-link" href="../student1/catalog.html">Young Adult</a>
+            </div>
+
+        </div><!-- /.row -->
+
+        <hr class="footer-divider"/>
+        <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom gap-2">
+            <p class="mb-0">&copy; 2026 Readify, Inc. Page designed by
+                <a href="www.linkedin.com/in/shahadat-hossain-8a4475331" target="_blank">Shahadat Hossain</a>
+            </p>
+            <div class="d-flex gap-3">
+                <a class="footer-link footer-link-inline" href="#">Privacy</a>
+                <a class="footer-link footer-link-inline" href="#">Terms</a>
+                <a class="footer-link footer-link-inline" href="#">Accessibility</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ============================================================
+     OFFCANVAS — PDF PREVIEW PANEL  (single reusable)
+     ============================================================
+     Replaces 10 individual offcanvas panels from Part 1.
+     .book-preview  .offcanvas-header  .offcanvas-body  →  css
+     .btn-close  →  Bootstrap
+
+     Part 1 FIX: iframe src is EMPTY on page load.
+     JS sets src only when the user clicks "Preview",
+     and clears it again when the offcanvas closes.
+     This stops PDFs auto-downloading in the background.
+============================================================ -->
+<div aria-labelledby="bookPreviewLabel" class="offcanvas offcanvas-end book-preview" id="bookPreview" tabindex="-1">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="bookPreviewLabel">Preview</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <!-- src="" on purpose — JS sets it on Preview click, clears on close -->
+        <iframe id="previewIframe" src="" title="Book chapter preview"></iframe>
+    </div>
+</div>
+
+
+<!-- ============================================================
+     MODAL — BUY / ADD TO CART  (single reusable)
+     ============================================================
+     Replaces 10 individual modals from Part 1.
+     .modal-content  .modal-header  .modal-body  →  main
+     .book-modal-img  .audio-price  →  css
+     .btn.btn-prim  (Add to Cart)  →  main
+     .star-rating  →  css
+
+     GET 2: book details fetched when modal opens
+     GET 3: reviews loaded after GET 2 completes
+     POST 1: review form submits to /student2/reviews
+     POST 2: Add to Cart posts to /student2/orders
+============================================================ -->
+<div aria-hidden="true" class="modal fade" id="bookBuyModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bookBuyModalLabel">Book Details</h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+
+                <!-- Spinner — shown while GET 2 is in flight -->
+                <div class="py-4" id="bookModalLoader">
+                    <div class="spinner-border text-secondary" role="status">
+                        <span class="visually-hidden">Loading…</span>
+                    </div>
+                    <p class="text-muted small mt-2">Fetching book details…</p>
+                </div>
+
+                <!-- Content — revealed after GET 2 + GET 3 resolve -->
+                <div class="d-none" id="bookModalContent">
+                    <img alt="" class="book-modal-img" id="bookModalImg" src=""/>
+                    <p class="audio-price mt-2" id="bookModalPrice"></p>
+                    <p class="text-start small" id="bookModalDesc"></p>
+
+                    <!-- Reader Reviews (GET 3) -->
+                    <div class="text-start mt-3 pt-2 border-top" id="bookModalReviews">
+                        <h6 class="mb-2"><i class="bi bi-star-half me-1 text-warning"></i>Reader Reviews</h6>
+                        <div id="bookReviewsList"></div>
+                    </div>
+
+                    <!-- Review Form (POST 1) -->
+                    <div class="text-start mt-3 pt-2 border-top">
+                        <h6 class="mb-2"><i class="bi bi-pencil me-1"></i>Leave a Review</h6>
+                        <form id="ebookReviewForm" novalidate>
+                            <div class="star-rating mb-2">
+                                <input id="es5" name="ebookStars" type="radio" value="5"/><label for="es5">★</label>
+                                <input id="es4" name="ebookStars" type="radio" value="4"/><label for="es4">★</label>
+                                <input id="es3" name="ebookStars" type="radio" value="3"/><label for="es3">★</label>
+                                <input id="es2" name="ebookStars" type="radio" value="2"/><label for="es2">★</label>
+                                <input id="es1" name="ebookStars" type="radio" value="1"/><label for="es1">★</label>
+                            </div>
+                            <input class="form-control mb-2" id="ebookReviewName"
+                                   placeholder="Your Name" required type="text"/>
+                            <textarea class="form-control mb-2" id="ebookReviewText"
+                                      placeholder="What did you think of this book?" required rows="2"></textarea>
+                            <button class="btn btn-ghost w-100 mb-2" type="submit">
+                                <i class="bi bi-send me-2"></i>Submit Review
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Add to Cart (POST 2) -->
+                    <button class="btn btn-prim w-100 mt-1" id="bookAddToCartBtn">
+                        <i class="bi bi-bag me-2"></i>Add to Cart
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Toast notification container -->
+<div aria-atomic="true" aria-live="polite"
+     class="toast-container position-fixed bottom-0 end-0 p-3"
+     id="toastContainer" style="z-index:9999;"></div>
+
+
+<!-- Bootstrap JS bundle (modal, offcanvas, carousel, collapse, dropdown) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Ebooks page JS — all API calls + interactive features -->
+<script src="js/student2.js"></script>
+</body>
+</html>

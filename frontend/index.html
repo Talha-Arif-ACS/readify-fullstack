@@ -1,0 +1,927 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Readify — Your Independent Bookstore</title>
+    <link href="common/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <!-- Google Fonts: Fraunces + Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"/>
+    <!-- Shared design system -->
+    <link href="common/css/main.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<!-- ============================================================
+     DISCLAIMER BANNER  (change 2: moved to top, Bootstrap bg)
+============================================================ -->
+<div class="alert alert-secondary alert-dismissible fade show mb-0 text-center py-2" role="alert">
+    <div class="container">
+        <small>
+            <i class="bi bi-info-circle me-1"></i>
+            This is a <strong>fictional website</strong> created as a student project for the Full Stack course at <a
+                class="alert-link" href="https://www.thomasmore.be/" target="_blank">Thomas More </a>.
+        </small>
+    </div>
+    <button aria-label="Close" class="btn-close btn-close-sm" data-bs-dismiss="alert" type="button"></button>
+</div>
+
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav aria-label="Main navigation" class="navbar navbar-expand-lg readify-nav">
+    <div class="container d-flex align-items-center">
+
+        <!-- Logo — links back to homepage -->
+        <a href="index.html">
+            <img alt="Readify logo" class="brand-logo" src="common/images/logo.svg"/>
+        </a>
+
+        <!-- Mobile toggle -->
+        <button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler border-0 ms-auto"
+                data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
+            <i class="bi bi-list fs-4 text-secondary"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student1/catalog.html">Browse Catalog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student2/ebooks.html">eBooks</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student2/audiobooks.html">Audio Books</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student3/reading-clubs.html">Reading Clubs</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="student1/help.html">Help</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <i class="bi bi-geo-alt me-1"></i>Shops
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="student3/shops.html#brussels"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Brussels</a></li>
+                        <li><a class="dropdown-item" href="student3/shops.html#antwerpen"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Antwerpen</a></li>
+                        <li><a class="dropdown-item" href="student3/shops.html#gent"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Gent</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <button aria-label="Open cart" class="nav-cart-btn">
+                        <i class="bi bi-bag"></i>
+                        <span>Cart</span>
+                        <span class="badge rounded-pill cart-badge">0</span>
+                    </button>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <button aria-expanded="false" class="btn-account" data-bs-toggle="dropdown">
+                        <i class="bi bi-person me-1"></i>Account
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" id="accountDropdownMenu">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"><i
+                                class="bi bi-box-arrow-in-right dropdown-icon me-2"></i>Login</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#signUpModal"><i class="bi bi-person-plus dropdown-icon me-2"></i>Sign
+                            Up</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-heart dropdown-icon me-2"></i>Wishlist</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<header class="hero-header">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Left: text + search -->
+            <div class="col-12 col-lg-7">
+                <div class="hero-inner">
+                    <h1>
+                        Every story
+                        <span class="italic-accent">worth telling.</span>
+                    </h1>
+                    <!-- change 4: removed margin: 0 auto so text aligns left with h1 -->
+                    <p class="hero-sub-index mt-3">
+                        Thousands of books across fiction, memoir, science &amp; more &mdash;
+                        chosen by readers who love them, for readers who will.
+                    </p>
+
+                    <!-- Search bar -->
+                    <div class="hero-search">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-search" style="color: var(--crimson)"></i>
+                            </span>
+                            <input class=" hero-input form-control"
+                                   placeholder="Search by title, author, or ISBN&hellip;"
+                                   type="text"/>
+                            <button class="btn" type="button">Search</button>
+                        </div>
+                    </div>
+
+                    <!-- Stats — change 3: stretched to match search bar, more spacing -->
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-num">50K<sup>+</sup></div>
+                            <div class="hero-stat-label">Titles</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-num">4.8<sup>&#9733;</sup></div>
+                            <div class="hero-stat-label">Avg Rating</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-num">1M<sup>+</sup></div>
+                            <div class="hero-stat-label">Readers</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: decorative bookshelf (hidden on mobile) -->
+            <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+                <div class="hero-bookshelf">
+                    <!-- Top shelf -->
+                    <div class="shelf-row">
+                        <div class="spine" style="width:42px;height:210px;background:#8B3A2A;"></div>
+                        <div class="spine" style="width:38px;height:228px;background:#E8D0A0;"></div>
+                        <div class="spine" style="width:44px;height:195px;background:#2C4A6E;"></div>
+                        <div class="spine" style="width:36px;height:240px;background:#4A7C5F;"></div>
+                        <div class="spine" style="width:40px;height:218px;background:#C0392B;"></div>
+                        <div class="spine" style="width:34px;height:205px;background:#6B4A2A;"></div>
+                        <div class="spine" style="width:46px;height:232px;background:#3A3058;"></div>
+                        <div class="spine" style="width:38px;height:198px;background:#C8A850;"></div>
+                        <div class="spine" style="width:42px;height:220px;background:#5A2A2A;"></div>
+                    </div>
+                    <div class="shelf-plank" style="width:380px;"></div>
+
+                    <!-- Bottom shelf -->
+                    <div class="shelf-row mt-3">
+                        <div class="spine" style="width:36px;height:185px;background:#1E4D3A;"></div>
+                        <div class="spine" style="width:44px;height:200px;background:#B8834A;"></div>
+                        <div class="spine" style="width:40px;height:192px;background:#3C3C6E;"></div>
+                        <div class="spine" style="width:38px;height:215px;background:#E8B060;"></div>
+                        <div class="spine" style="width:42px;height:188px;background:#8A2020;"></div>
+                        <div class="spine" style="width:36px;height:205px;background:#2A4A2A;"></div>
+                        <div class="spine" style="width:48px;height:196px;background:#5A3A1A;"></div>
+                        <div class="spine" style="width:38px;height:210px;background:#4A3060;"></div>
+                    </div>
+                    <div class="shelf-plank" style="width:380px;"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main>
+
+
+    <!-- ============================================================
+         EXPLORE READIFY — 4-row mosaic layout matching inspiration image
+    ============================================================ -->
+    <section class="overview-section">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2>Explore <span class="italic-accent">Readify</span></h2>
+                <p class="text-muted">Everything you need as a book lover, in one place.</p>
+            </div>
+
+
+            <!-- ══════════════════════════════════════════════════════
+                 ROW 1 — CATALOG
+                 Mobile:  stacked (col-12 each)
+                 md+:     col-md-9 books | col-md-3 label
+                 Both columns share one card wrapper so they have equal height.
+            ══════════════════════════════════════════════════════ -->
+            <div class="row g-4 mb-4">
+                <div class="col-12">
+                    <div class="overview-card">
+                        <div class="row g-0 h-100">
+
+                            <!-- Book previews — horizontally scrollable on md+ -->
+                            <div class="col-12 col-md-9 border-end-md">
+                                <div class="overview-preview-area">
+                                    <div class="overview-scroll-row">
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="A Brief History of Time"
+                                                         data-isbn="9780553380163"
+                                                         loading="lazy"
+                                                         src="https://covers.openlibrary.org/b/isbn/9780553380163-M.jpg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">A Brief History of Time</div>
+                                                    <p class="book-author" style="color:var(--crimson);">Stephen
+                                                        Hawking</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="The Republic"
+                                                         data-isbn="9780140455113"
+                                                         loading="lazy"
+                                                         src="https://covers.openlibrary.org/b/isbn/9780140455113-M.jpg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">The Rebublic</div>
+                                                    <p class="book-author" style="color:var(--chestnut);">Plato
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="Guns, Germs, and Steel"
+                                                         data-isbn="9780393354324"
+                                                         loading="lazy"
+                                                         src="https://covers.openlibrary.org/b/isbn/9780393354324-M.jpg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">Guns, Germs, and Steel</div>
+                                                    <p class="book-author" style="color:var(--crimson);">Jared
+                                                        Diamond</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="Meditations"
+                                                         data-isbn="9780140449334"
+                                                         loading="lazy"
+                                                         src="https://covers.openlibrary.org/b/isbn/9780140449334-M.jpg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">Meditations</div>
+                                                    <p class="book-author" style="color:var(--crimson);">Marcus
+                                                        Aurelius</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="Sapiens"
+                                                         data-isbn="9780062316097"
+                                                         loading="lazy"
+                                                         src="https://covers.openlibrary.org/b/isbn/9780062316097-M.jpg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">Sapiens</div>
+                                                    <p class="book-author" style="color:var(--crimson);">Yuval N.
+                                                        Harari</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="Siddhartha"
+                                                         data-isbn="9780553208849"
+                                                         loading="lazy"
+                                                         src="https://covers.openlibrary.org/b/isbn/9780553208849-M.jpg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">Siddhartha</div>
+                                                    <p class="book-author" style="color:var(--chestnut);">Hermann Hesse
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div><!-- /.overview-scroll-row -->
+                                </div><!-- /.overview-preview-area -->
+                            </div>
+
+                            <!-- Label -->
+                            <div class="col-12 col-md-3">
+                                <div class="overview-label-area d-flex flex-column justify-content-between h-100">
+                                    <div class="">
+                                        <span class="overview-card-icon"><i class="bi bi-journals"></i></span>
+                                        <div class="overview-card-title">Browse Catalog</div>
+                                        <p class="overview-card-text">
+                                            Thousands of fiction and nonfiction titles, from timeless classics to the
+                                            latest releases.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <a class="btn btn-ghost w-100 mt-auto" href="student1/catalog.html">Browse More
+                                            Books</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /row 1 -->
+
+
+            <!-- ══════════════════════════════════════════════════════
+                 ROW 2 — eBOOK  (label LEFT, preview RIGHT — reversed)
+                 Mobile:  stacked (label first, then books)
+                 md+:     col-md-3 label | col-md-9 books
+            ══════════════════════════════════════════════════════ -->
+            <div class="row g-4 mb-4">
+                <div class="col-12">
+                    <div class="overview-card">
+                        <div class="row g-0 h-100">
+
+                            <!-- Label — comes first in DOM so it appears above on mobile -->
+                            <div class="col-12 col-md-3 order-1 order-md-0 ">
+                                <div class="overview-label-area d-flex flex-column justify-content-between h-100">
+                                    <div>
+                                        <span class="overview-card-icon"><i class="bi bi-tablet"></i></span>
+                                        <div class="overview-card-title">eBook</div>
+                                        <p class="overview-card-text">
+                                            Download and read instantly on any device. Our digital library is always
+                                            open, wherever you are.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <a class="btn btn-ghost w-100 mt-auto" href="student2/ebooks.html">Browse More
+                                            eBooks</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- eBook previews -->
+                            <div class="col-12 col-md-9 order-0 order-md-1 border-start-md">
+                                <div class="overview-preview-area">
+                                    <div class="overview-scroll-row">
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="The Picture of Dorian Gray"
+
+                                                         src="student2/image/book1.jpeg"/>
+                                                    <!--                                                    data-isbn="9780141439570"-->
+                                                    <!--                                                    loading="lazy"-->
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">The Picture of Dorian Gray</div>
+                                                    <p class="book-author" style="color:var(--chestnut);">Oscar
+                                                        Wilde</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="Siddhartha"
+                                                         data-isbn="9780553208849"
+                                                         loading="lazy"
+                                                         src="student2/image/book2.jpeg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">Siddhartha</div>
+                                                    <p class="book-author" style="color:var(--chestnut);">Hermann
+                                                        Hesse</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="Anna Karenina"
+                                                         data-isbn="9780143035008"
+                                                         loading="lazy"
+                                                         src="student2/image/book3.jpeg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">Anna Karenina</div>
+                                                    <p class="book-author" style="color:var(--chestnut);">Leo
+                                                        Tolstoy</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="Emma"
+                                                         data-isbn="9780141439587"
+                                                         loading="lazy"
+                                                         src="student2/image/book4.jpeg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">Emma</div>
+                                                    <p class="book-author" style="color:var(--chestnut);">Jane
+                                                        Austen</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="book-col">
+                                            <div class="book-card">
+                                                <div class="book-cover-wrap">
+                                                    <img alt="frankenstein"
+                                                         data-isbn="9780140449136"
+                                                         loading="lazy"
+                                                         src="student2/image/book5.jpeg"/>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="book-title">frankenstein</div>
+                                                    <p class="book-author" style="color:var(--chestnut);">Mary Shelley
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div><!-- /.overview-scroll-row -->
+                                </div><!-- /.overview-preview-area -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /row 2 -->
+
+
+            <!-- ══════════════════════════════════════════════════════
+                 ROW 3 — three equal columns: Audio | Club | Shops
+                 Mobile:  col-12 (stacked)
+                 md+:     col-md-4 each
+            ══════════════════════════════════════════════════════ -->
+            <div class="row g-4 mb-4">
+
+                <!-- AUDIO BOOK -->
+                <div class="col-12 col-md-4">
+                    <div class="overview-card h-100 d-flex flex-column">
+                        <span class="overview-card-icon"><i class="bi bi-headphones"></i></span>
+                        <div class="overview-card-title">Audio Book</div>
+                        <p class="overview-card-text mb-3">
+                            Listen to literary favourites narrated by professional voice actors — perfect for commuting.
+                        </p>
+
+                        <div class="club-card mb-3">
+                            <div class="overview-audio-item mb-2">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <img alt="Pride and Prejudice"
+                                         class="rounded"
+                                         src="https://placehold.co/36x36/c0392b/ffffff?text=P"/>
+                                    <div>
+                                        <div style="font-size:0.8rem;font-weight:600;color:var(--ink);">Pride and
+                                            Prejudice
+                                        </div>
+                                        <div style="font-size:0.72rem;color:var(--stone);">Jane Austen</div>
+                                    </div>
+                                </div>
+                                <audio class="w-100" controls
+                                       src="student2/audio/ab1.mp3"></audio>
+                            </div>
+
+                            <div class="overview-audio-item">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <img alt="The Great Gatsby"
+                                         class="rounded"
+                                         src="https://placehold.co/36x36/2c4a6e/ffffff?text=G"/>
+                                    <div>
+                                        <div style="font-size:0.8rem;font-weight:600;color:var(--ink);">The Great
+                                            Gatsby
+                                        </div>
+                                        <div style="font-size:0.72rem;color:var(--stone);">F. Scott Fitzgerald</div>
+                                    </div>
+                                </div>
+                                <audio class="w-100" controls
+                                       src="student2/audio/ab3.mp3"></audio>
+                            </div>
+                        </div>
+
+                        <a class="btn btn-ghost w-100 mt-auto" href="student2/audiobooks.html">Browse Audio Books</a>
+                    </div>
+                </div>
+
+                <!-- READING CLUB — one club card on mobile, one on md+ (matches inspiration) -->
+                <div class="col-12 col-md-4">
+                    <div class="overview-card h-100 d-flex flex-column">
+                        <span class="overview-card-icon"><i class="bi bi-people"></i></span>
+                        <div class="overview-card-title">Reading Club</div>
+                        <p class="overview-card-text mb-3">
+                            Join a genre-based reading group, share your thoughts, and discover books recommended by
+                            fellow readers.
+                        </p>
+
+                        <!-- One club card (matches inspiration image) -->
+                        <div class="club-card mb-3">
+                        <span class="genre-badge genre-badge--fantasy">
+                            <i class="bi bi-stars me-1"></i>Fantasy
+                        </span>
+                            <h5 class="club-card-title mb-1">Fantasy Club</h5>
+                            <div class="club-meta">
+                                <span class="club-meta-label"><i class="bi bi-clock me-1"></i>Meets</span>
+                                <span class="club-meta-value">Tuesday 18:00</span>
+                            </div>
+                            <div class="club-meta">
+                                <span class="club-meta-label"><i class="bi bi-book me-1"></i>Reading</span>
+                                <span class="club-meta-value is-book">The Name of the Wind</span>
+                            </div>
+                        </div>
+
+                        <a class="btn btn-ghost w-100 mt-auto" href="student3/reading-clubs.html">View All Clubs</a>
+                    </div>
+                </div>
+
+                <!-- PHYSICAL SHOPS -->
+                <div class="col-12 col-md-4">
+                    <div class="overview-card h-100 d-flex flex-column">
+                        <span class="overview-card-icon"><i class="bi bi-shop"></i></span>
+                        <div class="overview-card-title">Physical Shops</div>
+                        <p class="overview-card-text mb-3">
+                            Visit one of our three stores across Belgium. Each one stocked and staffed by book lovers.
+                        </p>
+
+                        <div class="club-card mb-3">
+                            <p class="modal-section-label mb-2">Brussels</p>
+                            <h4 class="store-info-title">Readify Brussels</h4>
+                            <div class="store-info-row">
+                                <i class="bi bi-geo-alt-fill store-icon-location"></i>
+                                <span>Rue Neuve 100, 1000 Brussels</span>
+                            </div>
+                            <div class="store-info-row">
+                                <i class="bi bi-clock store-icon-hours"></i>
+                                <span>Mon – Sat &nbsp;09:00 – 19:00</span>
+                            </div>
+                            <div class="store-info-row">
+                                <i class="bi bi-telephone store-icon-phone"></i>
+                                <span>+32 2 123 45 67</span>
+                            </div>
+                        </div>
+
+                        <a class="btn btn-ghost w-100 mt-auto" href="student3/shops.html">All Store Locations</a>
+                    </div>
+                </div>
+
+            </div><!-- /row 3 -->
+
+
+            <!-- ══════════════════════════════════════════════════════
+                 ROW 4 — HELP  (full width, unchanged from previous)
+            ══════════════════════════════════════════════════════ -->
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="overview-card p-4">
+                        <div class="row align-items-center g-3 p-4">
+
+                            <div class="col-12 col-md-4">
+                                <span class="overview-card-icon"><i class="bi bi-question-circle"></i></span>
+                                <div class="overview-card-title">Help &amp; Support</div>
+                                <p class="overview-card-text">
+                                    Got a question? Need to sell a book? Our team is available Monday–Friday, 9am–6pm.
+                                </p>
+                                <a class="btn btn-ghost mt-3" href="student1/help.html">Visit Help Centre</a>
+                            </div>
+
+                            <div class="col-12 col-md-8">
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-4">
+                                        <a class="help-contact-card d-flex h-100 p-4 p-lg-5 text-center text-decoration-none flex-column align-items-center justify-content-center"
+                                           href="mailto:support@readify.com">
+                                            <i class="bi bi-envelope-fill d-block fs-3 mb-3"></i>
+                                            <div class="help-ct-title mb-1">Email Us</div>
+                                            <div class="help-ct-sub fst-italic text-break">support@readify.com</div>
+                                        </a>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <div class="help-contact-card d-flex h-100 p-4 p-lg-5 text-center flex-column align-items-center justify-content-center">
+                                            <i class="bi bi-chat-dots-fill d-block fs-3 mb-3"></i>
+                                            <div class="help-ct-title mb-1">Live Chat</div>
+                                            <div class="help-ct-sub fst-italic">Available Mon-Fri</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-4">
+                                        <a class="help-contact-card d-flex h-100 p-4 p-lg-5 text-center text-decoration-none flex-column align-items-center justify-content-center"
+                                           href="tel:+18007323439">
+                                            <i class="bi bi-telephone-fill d-block fs-3 mb-3"></i>
+                                            <div class="help-ct-title mb-1">Call Us</div>
+                                            <div class="help-ct-sub fst-italic">1-800-READIFY</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /row 4 -->
+
+
+        </div><!-- /.container -->
+    </section>
+
+
+    <!-- ============================================================
+         TEAM SECTION
+    ============================================================ -->
+    <section class="team-section">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2>Meet the <span class="italic-accent">Team</span></h2>
+                <p class="text-muted">The three students who built Readify.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img alt="Student 1"
+                             class="team-photo"
+                             src="common/images/colored_profile.jpg"/>
+                        <div class="team-name">Hamid Hussaini</div>
+                        <p class="team-role">Catalog &amp; Help pages</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img alt="Student 2"
+                             class="team-photo"
+                             src="common/images/shahadat_profile.jpeg"/>
+                        <div class="team-name">Shahadat Hossain</div>
+                        <p class="team-role">eBook &amp; Audio Book pages</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img alt="Student 3"
+                             class="team-photo"
+                             src="common/images/talha_profile.jpeg"/>
+                        <div class="team-name">Talha Arif</div>
+                        <p class="team-role">Shops &amp; Reading Clubs pages</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+</main><!-- /main -->
+
+
+<!-- ============================================================
+     NEWSLETTER
+============================================================ -->
+<section class="newsletter-section">
+    <div class="container newsletter-inner">
+        <h2>Never miss a<br><em>great read.</em></h2>
+        <p class="newsletter-body-text">Weekly staff picks, exclusive deals &amp; author spotlights in your inbox.</p>
+        <div class="newsletter-group">
+            <input class="form-control" id="nlEmail" placeholder="your@email.com" type="email"/>
+            <button class="btn" type="button" id="nl-btn">
+                <i class="bi bi-send me-1"></i>Subscribe
+            </button>
+        </div>
+        <p class="newsletter-fine-print">No spam. Unsubscribe anytime.</p>
+
+        <div class="col-4 mx-auto">
+            <div class="alert d-none" role="alert" id="nl-message"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Brand column -->
+            <div class="col-12 col-lg-4">
+                <img alt="Readify logo" src="common/images/logo_alt.svg" width="125"/>
+                <p class="footer-tagline mt-3">
+                    This is a fictional website created for our Full Stack project at
+                    <a href="https://www.thomasmore.be/">&copy; Thomas More.</a>
+                </p>
+                <div class="d-flex gap-3 mt-3">
+                    <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/readify30/"><i
+                            class="bi bi-instagram"></i></a>
+                    <a aria-label="X" class="social-icon" href="https://x.com/readify30"><i class="bi bi-twitter-x"></i></a>
+                    <a aria-label="Facebook" class="social-icon"
+                       href="https://www.facebook.com/share/1B4VCF98HM/?mibextid=wwXIfr"><i class="bi bi-facebook"></i></a>
+
+                </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Shop</p>
+                <a class="footer-link" href="student1/catalog.html">Browse Catalog</a>
+                <a class="footer-link" href="student2/audiobooks.html">Audio Books</a>
+                <a class="footer-link" href="student2/ebooks.html">E-Books</a>
+                <a class="footer-link" href="student3/shops.html">Physical Shops</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Clubs</p>
+                <a class="footer-link" href="student3/reading-clubs.html#clubs">Fantasy</a>
+                <a class="footer-link" href="student3/reading-clubs.html#clubs">Mystery</a>
+                <a class="footer-link" href="student3/reading-clubs.html#clubs">Sci-Fi</a>
+                <a class="footer-link" href="student3/reading-clubs.html#clubs">Non-Fiction</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Help</p>
+                <a class="footer-link" href="student1/help.html">Support</a>
+                <a class="footer-link" href="student1/help.html#faq">FAQ</a>
+                <a class="footer-link" href="student1/help.html#sell">Sell a Book</a>
+                <a class="footer-link" href="student1/help.html#contact">Contact Us</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Genres</p>
+                <a class="footer-link" href="student1/catalog.html#fiction">Fiction</a>
+                <a class="footer-link" href="student1/catalog.html#nonfiction">Nonfiction</a>
+                <a class="footer-link" href="student1/catalog.html">Children's</a>
+                <a class="footer-link" href="student1/catalog.html">Young Adult</a>
+            </div>
+
+        </div><!-- /.row -->
+
+        <hr class="footer-divider"/>
+        <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom gap-2">
+            <p class="mb-0">
+                &copy; 2026 Readify, Inc. &mdash; Fictional website for educational purposes.
+                Built by Hamid, Shahadat &amp; Talha.
+            </p>
+
+        </div>
+    </div>
+</footer>
+
+
+<!-- ============================================================
+    Sign up MODAL
+============================================================ -->
+<div aria-hidden="true" class="modal fade" id="signUpModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-person-plus me-2"></i>Create Your Account
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpFirstName" placeholder="First Name" type="text"/>
+                            <label for="signUpFirstName">First Name *</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpLastName" placeholder="Last Name" type="text"/>
+                            <label for="signUpLastName">Last Name *</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpEmail" placeholder="Email" type="email"/>
+                            <label for="signUpEmail">Email Address *</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpPassword" placeholder="Password" type="password"/>
+                            <label for="signUpPassword">Password *</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert d-none" role="alert" id="signUpMessage"></div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-prim w-100 py-2" type="button" id="signUpBtn">
+                            <i class="bi bi-person-plus me-2"></i>Create Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer modal-footer-custom justify-content-center">
+                <small class="text-muted">Already have an account?
+                    <a class="readify-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"
+                       data-bs-dismiss="modal">Log in</a>
+                </small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================================
+    Login MODAL
+============================================================ -->
+<div aria-hidden="true" class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-box-arrow-in-right me-2"></i>Welcome Back
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="loginEmail" placeholder="Email" type="email"/>
+                            <label for="loginEmail">Email Address</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="loginPassword" placeholder="Password" type="password"/>
+                            <label for="loginPassword">Password</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert d-none" role="alert" id="loginMessage"></div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-prim w-100 py-2" type="button" id="loginBtn">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Log In
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer modal-footer-custom justify-content-center">
+                <small class="text-muted">Don't have an account?
+                    <a class="readify-link" href="#" data-bs-toggle="modal" data-bs-target="#signUpModal"
+                       data-bs-dismiss="modal">Sign up</a>
+                </small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="student1/js/student1.js"></script>
+
+
+</body>
+</html>

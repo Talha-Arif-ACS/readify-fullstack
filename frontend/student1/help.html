@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Help & Support</title>
+    <meta content="Readify" name="author"/>
+    <link href="../common/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="../common/css/main.css" rel="stylesheet">
+    <!-- Bootstrap Icons 1.11.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <!-- Google Fonts: Fraunces + Plus Jakarta Sans — same as Antiquarian -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"/>
+
+
+</head>
+<body data-bs-spy="scroll" data-bs-target=".help-tabs" data-bs-offset="120" tabindex="0">
+
+
+<!-- ============================================================
+     1. PROMO BANNER
+     ============================================================-->
+<div class="alert promo-alert alert-dismissible fade show mb-0" role="alert">
+    <div class="container text-center">
+        <i class="bi bi-bookmark me-2"></i>
+        Use code <strong>READ10</strong> for 10% off your first order &mdash;
+        <a class="ms-1" href="#">Claim the offer</a>
+    </div>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button"></button>
+</div>
+
+
+<!-- ============================================================
+     2. NAVBAR
+     ============================================================
+     Identical markup to the Antiquarian page.
+     .readify-nav  .brand-logo  .nav-link  .nav-cart-btn
+     .cart-badge   .btn-account  .dropdown-menu  .dropdown-item
+     .dropdown-icon  →  all in antiquarian4.css
+============================================================ -->
+<nav aria-label="Main navigation" class="navbar navbar-expand-lg readify-nav">
+    <div class="container">
+
+        <!-- Logo — SVG fills updated to Antiquarian palette -->
+        <a href="../index.html"><img alt="logo" class="brand-logo" src="../common/images/logo.svg"></a>
+
+        <!-- Hamburger — visible on mobile only -->
+        <button aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler border-0 ms-auto"
+                data-bs-target="#mainNav" data-bs-toggle="collapse" type="button">
+            <i class="bi bi-list fs-4"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 mb-2 mb-lg-0">
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="catalog.html">Browse Catalog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../student2/ebooks.html">eBooks</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../student2/audiobooks.html">Audio Books</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../student3/reading-clubs.html">Reading Clubs</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                        <i class="bi bi-geo-alt me-1"></i>Stores
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="../student3/shops.html#brussels"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Brussels</a></li>
+                        <li><a class="dropdown-item" href="../student3/shops.html#antwerpen"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Antwerpen</a></li>
+                        <li><a class="dropdown-item" href="../student3/shops.html#gent"><i
+                                class="bi bi-geo-alt dropdown-icon me-2"></i>Gent</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="../index.html"><i class="bi bi-globe me-2"></i>Online
+                            Store</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <button aria-label="Open cart" class="nav-cart-btn">
+                        <i class="bi bi-bag me-1"></i>Cart
+                        <span class="badge rounded-pill cart-badge">3</span>
+                    </button>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <button aria-expanded="false" class="btn-account" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle me-1"></i>Account
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" id="accountDropdownMenu">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-box-arrow-in-right dropdown-icon me-2"></i>Login</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#signUpModal">
+                            <i class="bi bi-person-plus dropdown-icon me-2"></i>Sign Up</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">
+                            <i class="bi bi-heart dropdown-icon me-2"></i>Wishlist</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- ============================================================
+     3. HERO HEADER
+     ============================================================
+     Reuses .hero-header, .hero-inner, .hero-sub from antiquarian4.css.
+     The dark ink background, ruled-line texture, crimson glow, and
+     staggered entrance animation are all inherited automatically.
+
+     .italic-accent  →  antiquarian4.css (ochre italic on the h1)
+     .breadcrumb     →  Bootstrap (colours overridden in helpStyle.css)
+============================================================ -->
+<header class="hero-header mb-0">
+    <div class="hero-inner container text-center">
+
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item active">Help Centre</li>
+            </ol>
+        </nav>
+
+        <h1 class="mb-3">How Can We <span class="italic-accent">Help You?</span></h1>
+
+        <p class="hero-sub mx-auto">
+            Sell your books or find answers to common questions.
+        </p>
+
+    </div>
+</header>
+
+
+<!-- ============================================================
+     HELP NAVIGATION TABS
+     ============================================================
+     A sticky sub-nav that sits just below the 66px navbar.
+     .help-tabs  →  helpStyle.css
+     .nav-link, .nav-link.active  →  helpStyle.css overrides Bootstrap
+============================================================ -->
+<div class="help-tabs sticky-top overflow-auto">
+    <div class="container">
+        <ul class="nav nav-fill">
+            <li class="nav-item">
+                <a class="nav-link active rounded-0 text-nowrap fw-medium" href="#sell">
+                    <i class="bi bi-tags me-2"></i>Sell a Book
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link rounded-0 text-nowrap fw-medium" href="#bookListed" id="bookListTab">
+                    <!--this will be injected by JS                    -->
+                    <i class="bi bi-tags me-2"></i>Listed Books
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link rounded-0 text-nowrap fw-medium" href="#faq">
+                    <i class="bi bi-question-circle me-2"></i>FAQ
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+</div>
+
+
+<!-- ============================================================
+     MAIN CONTENT
+============================================================ -->
+<main class="container py-5">
+
+
+    <!-- ===========================================================
+         SECTION 1 — SELL A BOOK
+         ===========================================================
+         .form-control, .form-select, .form-floating label
+             → antiquarian4.css (exact same inputs as the book modal)
+         .btn.btn-prim
+             → antiquarian4.css (ink button, crimson on hover)
+         .help-section-header
+             → helpStyle.css  (crimson left-border block)
+         .help-condition-opts  (btn-check labels)
+             → helpStyle.css  (mirrors .format-options from antiquarian4.css)
+    =========================================================== -->
+    <section class="mb-5 pb-4" id="sell">
+
+        <!-- Section heading -->
+        <div class="mb-4">
+            <div class="help-section-header ps-3">
+                <h2 class="mb-1">Sell a Book</h2>
+                <p class="fst-italic mb-0">List your book and reach thousands of readers.</p>
+            </div>
+        </div>
+
+        <!-- ── SELL FORM ──────────────────────────────────────── -->
+        <div class="card border-0 p-4 p-lg-5" id="selling-form">
+
+                    <!--
+                        .modal-section-label  →  antiquarian4.css
+                        Same "BOOK DETAILS" uppercase label style used in the modal
+                    -->
+                    <p class="modal-section-label mb-3">Book Details</p>
+
+                    <div class="row g-3">
+
+                        <!-- Book Title -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input class="form-control" id="bookTitle" placeholder="Title" type="text">
+                                <label for="bookTitle">Book Title *</label>
+                            </div>
+                        </div>
+
+                        <!-- Author -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input class="form-control" id="bookAuthor" placeholder="Author" type="text">
+                                <label for="bookAuthor">Author *</label>
+                            </div>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input class="form-control" id="bookPrice" min="0" placeholder="Price"
+                                       step="0.01" type="number">
+                                <label for="bookPrice">Your Price ($) *</label>
+                            </div>
+                        </div>
+                        <!-- Books ISBN                       -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="bookIsbn" placeholder="Isbn">
+                                <label for="bookIsbn">Book ISBN * </label>
+
+                            </div>
+
+                        </div>
+
+                        <!--
+                            CONDITION SELECTOR — btn-check pattern
+                            Mirrors .format-options in the Antiquarian modal exactly.
+                            Hidden radio inputs + styled labels. Checked state = ink fill.
+                            .help-condition-opts  →  helpStyle.css
+                        -->
+                        <div class="col-12">
+                            <p class="modal-section-label mb-2">Book Condition *</p>
+                            <div class="d-flex gap-3 flex-wrap help-condition-opts">
+
+                                <input checked class="btn-check" id="cNew"
+                                       name="condition" type="radio" value="new">
+                                <label class="rounded-2 px-3 py-2 text-center fw-medium" for="cNew">
+                                    <span class="fs-5 lh-1">✨</span>New
+                                </label>
+
+                                <input class="btn-check" id="cGood"
+                                       name="condition" type="radio" value="good">
+                                <label class="rounded-2 px-3 py-2 text-center fw-medium" for="cGood">
+                                    <span class="fs-5 lh-1">👍</span>Good
+                                </label>
+
+                                <input class="btn-check" id="cUsed"
+                                       name="condition" type="radio" value="used">
+                                <label class="rounded-2 px-3 py-2 text-center fw-medium" for="cUsed">
+                                    <span class="fs-5 lh-1">📖</span>Used
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <!-- Short Description — height via CSS class, not inline style -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control help-sell-textarea" id="bookDesc"
+                                          placeholder="Description"></textarea>
+                                <label for="bookDesc">Short Description</label>
+                            </div>
+                            <div class="form-text">Mention any highlights, edition, or notes about the book.</div>
+                        </div>
+
+
+
+                        <!--
+                            Submit — .btn-prim from antiquarian4.css
+                            Ink background, crimson on hover — same as "Add to Cart"
+                        -->
+                        <div class="col-12 pt-2">
+                            <button class="btn btn-prim" type="submit" id="submit-book">
+                                <i class="bi bi-tags me-2"></i>List My Book
+                            </button>
+                        </div>
+
+                        <!--Check if user is logged in-->
+                        <div class="col-12">
+                            <div class="d-none alert" role="alert" id="listingMessage">
+                            <!--
+                                will be injected form JS in three casee: 1. Not logged in 2. no input is filled in 3. Books is listed -->
+                            </div>
+                        </div>
+
+
+
+                    </div><!-- /.row -->
+
+        </div><!-- /.card -->
+    </section>
+
+
+
+
+
+<!--  - ===========================================================
+         SECTION 2 — List of books listed by user. Injected by JS
+         ===========================================================  -->
+    <section class="mb-5 pb-4" id="bookListed">
+
+        <div class="mb-4">
+            <div class="help-section-header ps-3">
+<!--                Change to name of user -->
+                <h2 class="mb-1">Your Listed Books</h2>
+                <p class="fst-italic mb-0">You can check the status of each book.</p>
+            </div>
+        </div>
+
+        <div id="listedBookCard">
+
+            <div class="row g-3 " id="listed-book-rows">
+
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+    <!-- ===========================================================
+         SECTION 3 — FAQ
+         ===========================================================
+         Accordion reuses the EXACT same markup pattern as the
+         "About This Book / Write a Review" accordion in the
+         Antiquarian modal, so antiquarian4.css styles it for free:
+           .modal-accordion  .accordion-item  .accordion-button
+           .accordion-button:not(.collapsed)  .accordion-body
+         .modal-section-label  →  antiquarian4.css (category labels)
+         .help-faq-tag  →  helpStyle.css (small "Selling" badge)
+    =========================================================== -->
+    <section class="mb-2" id="faq">
+
+        <div class="mb-4">
+            <div class="help-section-header ps-3">
+                <h2 class="mb-1">Frequently Asked Questions</h2>
+                <p class="fst-italic mb-0">Quick answers to the most common questions.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Left column — Selling questions -->
+            <div class="col-12 col-lg-6 mb-4 mb-lg-0">
+
+                <p class="modal-section-label mb-3">
+                    <i class="bi bi-tags me-1"></i>Selling
+                </p>
+
+                <!--
+                    .modal-accordion  →  antiquarian4.css
+                    This class already styles accordion-button, accordion-item,
+                    accordion-body with the Antiquarian parchment/crimson palette.
+                -->
+                <div class="accordion modal-accordion" id="faqSell">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button"
+                                    data-bs-target="#faqS1" data-bs-toggle="collapse" type="button">
+                                How do I sell a book on Readify?
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse show"
+                             data-bs-parent="#faqSell" id="faqS1">
+                            <div class="accordion-body">
+                                Fill in the Sell form above with your book's title, author, condition, price, and a
+                                short description. We review listings within 24 hours and notify you by email once
+                                it's live.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    data-bs-target="#faqS2" data-bs-toggle="collapse" type="button">
+                                Is it free to list a book?
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse"
+                             data-bs-parent="#faqSell" id="faqS2">
+                            <div class="accordion-body">
+                                Yes, listing a book on Readify is completely free. We only take a small 5% commission
+                                once your book is sold, so you keep 95% of your listing price.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    data-bs-target="#faqS3" data-bs-toggle="collapse" type="button">
+                                What condition must the book be in to sell?
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse"
+                             data-bs-parent="#faqSell" id="faqS3">
+                            <div class="accordion-body">
+                                We accept books in New, Good, or Used condition. Books must be complete, not heavily
+                                damaged, and accurately described. We reserve the right to reject listings that
+                                misrepresent a book's condition.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    data-bs-target="#faqS4" data-bs-toggle="collapse" type="button">
+                                When will I receive payment for my sale?
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse"
+                             data-bs-parent="#faqSell" id="faqS4">
+                            <div class="accordion-body">
+                                Payment is released within 3 business days after the buyer confirms receipt.
+                                You can withdraw earnings to your bank account or use them as Readify credit.
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /#faqSell -->
+            </div><!-- /.col-lg-6 -->
+
+            <!-- Right column — General questions -->
+            <div class="col-12 col-lg-6">
+
+                <p class="modal-section-label mb-3">
+                    <i class="bi bi-question-circle me-1"></i>General
+                </p>
+
+                <div class="accordion modal-accordion" id="faqGeneral">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button"
+                                    data-bs-target="#faqG1" data-bs-toggle="collapse" type="button">
+                                How do I create a Readify account?
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse show"
+                             data-bs-parent="#faqGeneral" id="faqG1">
+                            <div class="accordion-body">
+                                Click the Account button in the navbar and choose Sign Up. You'll need an email address
+                                and a password. Once verified, you can buy and sell books straight away.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    data-bs-target="#faqG2" data-bs-toggle="collapse" type="button">
+                                What payment methods do you accept?
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse"
+                             data-bs-parent="#faqGeneral" id="faqG2">
+                            <div class="accordion-body">
+                                We accept Visa, Mastercard, American Express, PayPal, and Apple Pay.
+                                All transactions are secured with 256-bit SSL encryption.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    data-bs-target="#faqG3" data-bs-toggle="collapse" type="button">
+                                How long does shipping take?
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse"
+                             data-bs-parent="#faqGeneral" id="faqG3">
+                            <div class="accordion-body">
+                                Standard shipping is 3–5 business days. Express shipping (1–2 days) is available
+                                at checkout. Free standard shipping on orders over $35.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    data-bs-target="#faqG4" data-bs-toggle="collapse" type="button">
+                                Can I track my order?
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse"
+                             data-bs-parent="#faqGeneral" id="faqG4">
+                            <div class="accordion-body">
+                                Yes. Once your order ships you'll receive a tracking number by email.
+                                You can also view your order status at any time from your Account dashboard.
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /#faqGeneral -->
+            </div><!-- /.col-lg-6 -->
+
+        </div><!-- /.row -->
+    </section>
+
+</main><!-- /main -->
+
+
+<!-- ============================================================
+     CONTACT STRIP
+     ============================================================
+     .help-contact-strip  .help-contact-card  →  helpStyle.css
+     Typography tokens reuse --font-head, --ink, --stone, --crimson
+     from antiquarian4.css automatically (set on :root).
+============================================================ -->
+<section class="help-contact-strip text-center" id="contact">
+    <div class="container">
+
+        <!-- Eyebrow — same uppercase pattern as .chapter-label in the hero -->
+        <p class="help-contact-eyebrow text-uppercase fw-bold mb-2">NEED MORE HELP?</p>
+        <h3 class="help-contact-heading mb-2">We're here for you.</h3>
+        <p class="help-contact-sub fst-italic mb-0">Our team is available Monday–Friday, 9am–6pm.</p>
+
+        <div class="row g-3 justify-content-center mt-2">
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a class="help-contact-card d-block h-100 p-4 text-center text-decoration-none"
+                   href="mailto:support@readify.com">
+                    <i class="bi bi-envelope-fill d-block fs-3 mb-3"></i>
+                    <div class="help-ct-title mb-1">Email Us</div>
+                    <div class="help-ct-sub fst-italic text-break">support@readify.com</div>
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <div class="help-contact-card h-100 p-4 text-center">
+                    <i class="bi bi-chat-dots-fill d-block fs-3 mb-3"></i>
+                    <div class="help-ct-title mb-1">Live Chat</div>
+                    <div class="help-ct-sub fst-italic">Available Mon–Fri</div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a class="help-contact-card d-block h-100 p-4 text-center text-decoration-none"
+                   href="tel:+18007323439">
+                    <i class="bi bi-telephone-fill d-block fs-3 mb-3"></i>
+                    <div class="help-ct-title mb-1">Call Us</div>
+                    <div class="help-ct-sub fst-italic">1-800-READIFY</div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     NEWSLETTER
+     ============================================================
+     Identical markup to the Antiquarian page.
+     .newsletter-section  .newsletter-inner  .newsletter-body-text
+     .newsletter-group    .newsletter-fine-print
+         → all in antiquarian4.css — zero custom CSS needed
+============================================================ -->
+<section class="newsletter-section">
+    <div class="container newsletter-inner">
+        <h2>Never miss a<br><em>great read.</em></h2>
+        <p class="newsletter-body-text">
+            Weekly staff picks, exclusive deals &amp; author spotlights to your inbox.
+        </p>
+        <div class="newsletter-group">
+            <input class="form-control" id="nlEmail" placeholder="your@email.com" type="email"/>
+            <button class="btn" type="button" id="nl-btn">
+                <i class="bi bi-send me-1"></i>Subscribe
+            </button>
+        </div>
+        <p class="newsletter-fine-print">No spam. Unsubscribe anytime.</p>
+
+        <div class="col-4 mx-auto">
+            <div class="alert d-none" role="alert" id="nl-message"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================
+     Identical markup to the Antiquarian page.
+     .site-footer  .footer-col-title  .footer-link  .footer-link-inline
+     .footer-tagline  .footer-divider  .footer-bottom  .social-icon
+         → all in antiquarian4.css — zero custom CSS needed
+============================================================ -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-4">
+
+            <!-- Brand column -->
+            <div class="col-12 col-lg-4">
+                <a href="../index.html"><img alt="logo alternate" src="../common/images/logo_alt.svg" width="125"></a>
+
+                    <p class="footer-tagline mt-3">
+                        This is a fictional website created for our Full Stack Essentials course at
+                        <a href="https://www.thomasmore.be/">&copy; Thomas More University of Applied Sciences.</a>
+                    </p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/readify30/"><i class="bi bi-instagram"></i></a>
+                        <a aria-label="X" class="social-icon" href="https://x.com/readify30"><i class="bi bi-twitter-x"></i></a>
+                        <a aria-label="Facebook" class="social-icon" href="https://www.facebook.com/share/1B4VCF98HM/?mibextid=wwXIfr"><i class="bi bi-facebook"></i></a>
+                    </div>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Shop</p>
+                <a class="footer-link" href="catalog.html">Browse Catalog</a>
+                <a class="footer-link" href="../student2/audiobooks.html">Audio Books</a>
+                <a class="footer-link" href="../student2/ebooks.html">E-Books</a>
+                <a class="footer-link" href="../student3/shops.html">Physical Shops</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Clubs</p>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Fantasy</a>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Mystery</a>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Sci-Fi</a>
+                <a class="footer-link" href="../student3/reading-clubs.html#clubs">Non-Fiction</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Help</p>
+                <a class="footer-link" href="help.html">Support</a>
+                <a class="footer-link" href="help.html#faq">FAQ</a>
+                <a class="footer-link" href="help.html#sell">Sell a Book</a>
+                <a class="footer-link" href="help.html#contact">Contact Us</a>
+            </div>
+
+            <div class="col-6 col-lg-2">
+                <p class="footer-col-title">Genres</p>
+                <a class="footer-link" href="catalog.html#fiction">Fiction</a>
+                <a class="footer-link" href="catalog.html#nonfiction">Nonfiction</a>
+                <a class="footer-link" href="catalog.html">Children's</a>
+                <a class="footer-link" href="catalog.html">Young Adult</a>
+            </div>
+
+        </div><!-- /.row -->
+
+        <hr class="footer-divider"/>
+        <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom gap-2">
+            <p class="mb-0">&copy; 2026 Readify, Inc. Page designed by
+                <a href="https://www.linkedin.com/in/hamidhussaini-pro/" target="_blank">Hamid Hussaini.</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- ============================================================
+    Sign up  MODAL
+============================================================ -->
+
+<div aria-hidden="true" class="modal fade" id="signUpModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-person-plus me-2"></i>Create Your Account
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpFirstName" placeholder="First Name" type="text"/>
+                            <label for="signUpFirstName">First Name *</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpLastName" placeholder="Last Name" type="text"/>
+                            <label for="signUpLastName">Last Name *</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpEmail" placeholder="Email" type="email"/>
+                            <label for="signUpEmail">Email Address *</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="signUpPassword" placeholder="Password" type="password"/>
+                            <label for="signUpPassword">Password *</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert d-none" role="alert" id="signUpMessage"></div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-prim w-100 py-2" type="button" id="signUpBtn">
+                            <i class="bi bi-person-plus me-2"></i>Create Account
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal-footer modal-footer-custom justify-content-center">
+                <small class="text-muted">Already have an account?
+                    <a class="readify-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal"
+                       data-bs-dismiss="modal">Log in</a>
+                </small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================================
+    Login MODAL
+============================================================ -->
+
+<div aria-hidden="true" class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-box-arrow-in-right me-2"></i>Welcome Back
+                </h5>
+                <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="loginEmail" placeholder="Email" type="email"/>
+                            <label for="loginEmail">Email Address</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control" id="loginPassword" placeholder="Password" type="password"/>
+                            <label for="loginPassword">Password</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="alert d-none" role="alert" id="loginMessage"></div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-prim w-100 py-2" type="button" id="loginBtn">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Log In
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer modal-footer-custom justify-content-center">
+                <small class="text-muted">Don't have an account?
+                    <a class="readify-link" href="#" data-bs-toggle="modal" data-bs-target="#signUpModal"
+                       data-bs-dismiss="modal">Sign up</a>
+                </small>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap JS bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/student1.js"></script>
+
+</body>
+</html>

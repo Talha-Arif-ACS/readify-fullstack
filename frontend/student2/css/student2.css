@@ -1,0 +1,732 @@
+/* ================================================================
+   0. CSS CUSTOM PROPERTIES  (Part 1 Fix — added)
+   Centralise repeated spacing / radius values
+================================================================ */
+
+:root {
+    --card-pad: 20px 16px 18px;
+    --section-gap: 3rem;
+    --btn-radius: 7px;
+}
+
+
+/* ================================================================
+   1. HERO — BREADCRUMB COLOURS (Shared by both pages)
+================================================================ */
+
+.hero-header .breadcrumb-item a {
+    color: rgba(238, 232, 216, 0.55);
+    text-decoration: none;
+    font-size: 0.83rem;
+    transition: color var(--ease);
+}
+
+.hero-header .breadcrumb-item a:hover {
+    color: var(--fic-acc);
+}
+
+.hero-header .breadcrumb-item.active {
+    color: rgba(238, 232, 216, 0.80);
+}
+
+.hero-header .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(238, 232, 216, 0.30);
+}
+
+
+/* ================================================================
+   2. HERO ICON BADGES
+   Separate badges for Audio page and Ebook page
+================================================================ */
+
+/* AUDIO PAGE ICON BADGE */
+
+.audio-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(207, 160, 90, 0.12);
+    border: 1px solid rgba(207, 160, 90, 0.30);
+    color: var(--fic-acc);
+    border-radius: 50px;
+    padding: 7px 20px;
+    font-size: 1.2rem;
+    margin-bottom: 22px;
+}
+
+
+/* EBOOK PAGE ICON BADGE */
+
+.ebook-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(207, 160, 90, 0.12);
+    border: 1px solid rgba(207, 160, 90, 0.30);
+    color: var(--fic-acc);
+    border-radius: 50px;
+    padding: 7px 18px;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 22px;
+}
+
+
+/* ================================================================
+   3. SECTION HEADERS
+================================================================ */
+
+.audio-section-header {
+    border-left: 4px solid var(--crimson);
+    padding-left: 16px;
+    margin-bottom: 0;
+}
+
+.audio-section-header h2 {
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: var(--ink);
+    margin: 0 0 4px;
+    letter-spacing: -0.02em;
+}
+
+.audio-section-header p {
+    color: var(--stone);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 0;
+}
+
+
+.ebook-section-header {
+    border-left: 4px solid var(--crimson);
+    padding-left: 16px;
+    margin-bottom: 0;
+}
+
+.ebook-section-header h2 {
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: var(--ink);
+    margin: 0 0 4px;
+    letter-spacing: -0.02em;
+}
+
+.ebook-section-header p {
+    color: var(--stone);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 0;
+}
+
+
+@media (min-width: 768px) {
+
+    .audio-section-header h2,
+    .ebook-section-header h2 {
+        font-size: 1.85rem;
+    }
+
+}
+
+
+/* ================================================================
+   4. AUDIO BOOK CARD
+================================================================ */
+
+.audio-book-card {
+    background: var(--parchment);
+    border: 2px solid var(--rule);
+    border-radius: 10px;
+    transition: box-shadow var(--ease), border-color var(--ease);
+    height: 100%;
+
+    &:hover {
+        box-shadow: 0 6px 24px rgba(26, 15, 9, 0.10);
+        border-color: var(--crim-mid);
+    }
+
+    /* Override bootstrap card defaults */
+
+    &.card {
+        background: var(--parchment);
+        border-radius: var(--radius);
+    }
+
+    & .card-body {
+        border-radius: var(--radius);
+        padding: 16px 20px 20px;
+        background: var(--parchment);
+    }
+
+    /* tag selector (h5) instead of class selector (.card-title) */
+
+    & h5.card-title {
+        font-family: var(--font-head);
+        font-weight: 700;
+        font-size: 0.97rem;
+        color: var(--ink);
+        margin-bottom: 2px;
+        line-height: 1.3;
+    }
+
+    /*  tag selector (p) instead of class selector (.card-text) */
+
+    & p.card-text {
+        font-size: 0.82rem;
+        color: var(--ink);
+        font-style: italic;
+        margin-bottom: 14px;
+    }
+}
+
+
+/* ================================================================
+   5. AUDIO BOOK COVER
+================================================================ */
+
+.audio-cover {
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(26, 15, 9, 0.14);
+    margin: 18px auto 0;
+}
+
+
+/* ================================================================
+   6. AUDIO PLAYER
+================================================================ */
+
+.audio-player-wrap {
+    background: var(--ink);
+    border: 1px solid var(--rule);
+    border-radius: 30px;
+    padding: 1px;
+    margin-bottom: 14px;
+}
+
+.audio-player-wrap audio {
+    width: 100%;
+    height: 36px;
+    display: block;
+    accent-color: var(--crimson);
+}
+
+
+/* ================================================================
+   7. AUDIO MODAL STYLES
+================================================================ */
+
+.audio-price {
+    font-family: var(--font-head);
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--fic-acc);
+    letter-spacing: -0.02em;
+    margin: 6px 0 12px;
+}
+
+.audio-modal-title {
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.audio-modal-desc {
+    font-size: 0.87rem;
+    color: var(--chestnut);
+    line-height: 1.72;
+    margin-bottom: 18px;
+}
+
+.audio-modal-cover {
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(26, 15, 9, 0.14);
+}
+
+
+/* ================================================================
+   8. STAR RATING (Used in Reviews)
+================================================================ */
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 2px;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 1.7rem;
+    color: var(--rule);
+    cursor: pointer;
+    transition: color var(--ease);
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: var(--fic-acc);
+}
+
+.star-rating input:checked ~ label {
+    color: var(--fic-acc);
+}
+
+
+/* ================================================================
+   9. EBOOK CARD
+   Part 1 Fix: position:relative added (required for .previewed-badge)
+================================================================ */
+
+.book-card {
+    background: var(--white);
+    border: 2px solid var(--ink);
+    border-radius: 10px;
+    padding: var(--card-pad);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow var(--ease), border-color var(--ease);
+    position: relative;
+}
+
+.book-card:hover {
+    box-shadow: 0 6px 24px rgba(26, 15, 9, 0.10);
+    border-color: var(--crim-mid);
+}
+
+/* tag selector (h5) inside .book-card instead of .book-title class */
+.book-card h5 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-top: 14px;
+    margin-bottom: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+/* ================================================================
+   10. EBOOK COVER IMAGE
+================================================================ */
+
+.book-img {
+    width: auto;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 4px 14px rgba(26, 15, 9, 0.15);
+}
+
+@media (min-width: 768px) {
+
+    .book-img {
+        height: 210px;
+    }
+
+}
+
+
+/* ================================================================
+   11. EBOOK TITLE  (kept for backwards compatibility)
+   The tag selector .book-card h5 above is the primary rule.
+================================================================ */
+
+.book-title {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ink);
+    line-height: 1.3;
+    margin-top: 14px;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+
+/* ================================================================
+   12. EBOOK BUTTON GROUP
+   stack buttons vertically on small screens
+================================================================ */
+
+.book-btn-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+    width: 100%;
+    justify-content: center;
+}
+
+.book-btn-group .btn {
+    flex: 1;
+    font-size: 0.75rem;
+    padding: 8px 10px;
+}
+
+
+@media (max-width: 575.98px) {
+    .book-btn-group {
+        flex-direction: column;
+    }
+}
+
+
+/* ================================================================
+   13. EBOOK CAROUSEL CONTROLS
+================================================================ */
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 42px;
+    height: 42px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--white);
+    border: 1.5px solid var(--rule);
+    border-radius: 50%;
+    opacity: 1;
+    box-shadow: 0 2px 10px rgba(26, 15, 9, 0.10);
+}
+
+.carousel-control-prev {
+    left: -22px;
+}
+
+.carousel-control-next {
+    right: -22px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) sepia(1) saturate(0) brightness(0.15);
+    width: 14px;
+    height: 14px;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    filter: invert(1) brightness(2);
+}
+
+.ebook-carousel-wrap {
+    padding: 0 32px;
+}
+
+
+/* ================================================================
+   14. EBOOK PDF PREVIEW PANEL
+   btn-close contrast
+================================================================ */
+
+.book-preview .offcanvas-header {
+    background: var(--ivory);
+    border-bottom: 1.5px solid var(--rule);
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.book-preview {
+    z-index: 1065;
+}
+
+.offcanvas-backdrop {
+    z-index: 1060;
+}
+
+.book-preview .offcanvas-title {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.book-preview .offcanvas-body {
+    padding: 0;
+    background: var(--white);
+}
+
+.book-preview .offcanvas-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* \close button is visible on ivory background */
+.book-preview .btn-close {
+    opacity: 0.65;
+    filter: none;
+    background-color: transparent;
+}
+
+.book-preview .btn-close:hover {
+    opacity: 1;
+}
+
+
+/* ================================================================
+   15. EBOOK BUY MODAL IMAGE
+================================================================ */
+
+.book-modal-img {
+    max-height: 200px;
+    width: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 14px rgba(26, 15, 9, 0.14);
+    display: block;
+    margin: 0 auto 16px;
+}
+
+
+/* ================================================================
+   16. STATS STRIP  (CONTENT 3 / ebooks — CONTENT 1 / audiobooks)
+================================================================ */
+
+.stats-strip {
+    background: var(--ink);
+    color: var(--ivory);
+    padding: 14px 0;
+    font-size: 0.88rem;
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stats-strip .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(238, 232, 216, 0.85);
+}
+
+.stats-strip .stat-item i {
+    color: var(--fic-acc);
+    font-size: 1rem;
+}
+
+.stats-strip strong {
+    color: var(--fic-acc);
+}
+
+
+/* ================================================================
+   17. GENRE FILTER BAR  (CONTENT 1 / ebooks — CONTENT 3 / audiobooks)
+================================================================ */
+
+.genre-filter-bar {
+    padding: 0 4px;
+}
+
+.genre-pill {
+    background: transparent;
+    border: 1.5px solid var(--rule);
+    border-radius: 50px;
+    padding: 5px 16px;
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    color: var(--stone);
+    cursor: pointer;
+    transition: background var(--ease), border-color var(--ease), color var(--ease);
+}
+
+.genre-pill:hover {
+    border-color: var(--crimson);
+    color: var(--crimson);
+}
+
+.genre-pill.active {
+    background: var(--crimson);
+    border-color: var(--crimson);
+    color: var(--white);
+}
+
+
+/* ================================================================
+   18. INFO STRIP  (Why Read Digitally / How Audiobooks Work)
+================================================================ */
+
+.info-strip {
+    background: var(--crim-lt);
+    padding: var(--section-gap) 0;
+    border-top: 1px solid var(--crim-mid);
+    border-bottom: 1px solid var(--crim-mid);
+}
+
+.info-strip-item {
+    padding: 0 16px;
+}
+
+.info-strip-item i {
+    font-size: 2.2rem;
+    color: var(--crimson);
+    display: block;
+    margin-bottom: 14px;
+}
+
+.info-strip-item h5 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+
+.info-strip-item p {
+    font-size: 0.875rem;
+    color: var(--stone);
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* ================================================================
+   19. EDITOR'S PICK & NARRATOR SPOTLIGHT  (dark feature panels)
+================================================================ */
+
+.editor-pick,
+.narrator-spotlight {
+    background: var(--fic-bg);
+    color: var(--ivory);
+    padding: var(--section-gap) 0;
+}
+
+.editor-pick h3,
+.narrator-spotlight h3 {
+    font-family: var(--font-head);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.editor-pick p,
+.narrator-spotlight p {
+    color: rgba(238, 232, 216, 0.75);
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+
+/* ================================================================
+   20. NOW PLAYING STICKY BAR  (audiobooks page)
+================================================================ */
+
+.now-playing-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--ink);
+    color: var(--ivory);
+    padding: 10px 0;
+    z-index: 1040;
+    border-top: 2px solid var(--crimson);
+    font-size: 0.875rem;
+    box-shadow: 0 -4px 20px rgba(26, 15, 9, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.now-playing-bar #nowPlayingTitle {
+    font-weight: 600;
+    color: var(--fic-acc);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+}
+
+.now-playing-bar .bi-soundwave {
+    color: var(--fic-acc);
+    font-size: 1.3rem;
+    animation: soundpulse 1.5s ease-in-out infinite;
+}
+
+@keyframes soundpulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.35;
+    }
+}
+
+
+/* ================================================================
+   21. PREVIEWED BADGE  (ebooks page — session badge on card)
+================================================================ */
+
+.previewed-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #198754;
+    color: #fff;
+    font-size: 0.63rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 50px;
+    letter-spacing: 0.03em;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+
+/* ================================================================
+   22. INLINE REVIEW ITEM  (inside buy modal)
+================================================================ */
+
+.review-item:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+
+/* ================================================================
+   23. HOW-IT-WORKS STEP ICONS  (audiobooks explainer)
+================================================================ */
+
+.how-step {
+    padding: 0 12px;
+}
+
+.how-step-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--crimson);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin: 0 auto 14px;
+    flex-shrink: 0;
+}
+
+.how-step h5 {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 6px;
+}
+
+.how-step p {
+    font-size: 0.875rem;
+    color: var(--stone);
+    margin: 0;
+}
